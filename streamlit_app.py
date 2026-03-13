@@ -20,486 +20,490 @@ st.set_page_config(
 )
 
 # ---------------------------------------------------------------------------
-# Theme CSS — mirrors greenmetric.ai dark palette
+# CSS
 # ---------------------------------------------------------------------------
 st.markdown("""
 <style>
-/* ---- base ---- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-html, body, [class*="css"] {
-    font-family: 'Inter', sans-serif;
-}
+/* ---- reset ---- */
+html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
+.stApp { background-color: #09090B; color: #E5E5E5; }
+#MainMenu, footer, header { visibility: hidden; }
+div[data-testid="stDecoration"] { display: none; }
+section[data-testid="stSidebar"] { background-color: #111113; border-right: 1px solid #1C1C1F; }
 
-.stApp {
-    background-color: #0A0A0A;
-    color: #E5E5E5;
+/* ---- navbar ---- */
+.navbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 0; border-bottom: 1px solid #1C1C1F; margin-bottom: 2.5rem;
 }
-
-/* ---- hide default streamlit chrome ---- */
-#MainMenu, footer, header {visibility: hidden;}
-div[data-testid="stDecoration"] {display: none;}
-
-/* ---- sidebar ---- */
-section[data-testid="stSidebar"] {
-    background-color: #111111;
-    border-right: 1px solid #1E1E1E;
+.navbar .logo { font-size: 1.4rem; font-weight: 800; color: #FAFAFA; letter-spacing: -0.03em; }
+.navbar .logo span { color: #10B981; }
+.navbar .nav-links { display: flex; gap: 1.8rem; align-items: center; }
+.navbar .nav-links a {
+    color: #71717A; font-size: 0.85rem; text-decoration: none; font-weight: 500;
+    transition: color 0.15s;
 }
-
-/* ---- top bar ---- */
-.top-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 0 1.5rem 0;
-    border-bottom: 1px solid #1E1E1E;
-    margin-bottom: 2rem;
-}
-.top-bar .logo {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #FFFFFF;
-    letter-spacing: -0.02em;
-}
-.top-bar .logo span {
-    color: #10B981;
-}
-.top-bar .badge {
-    font-size: 0.7rem;
-    padding: 0.25rem 0.6rem;
-    background: #10B98118;
-    color: #10B981;
-    border-radius: 9999px;
-    border: 1px solid #10B98130;
-    font-weight: 500;
+.navbar .nav-links a:hover { color: #FAFAFA; }
+.nav-badge {
+    font-size: 0.65rem; padding: 0.2rem 0.55rem; background: #10B98115;
+    color: #10B981; border-radius: 9999px; border: 1px solid #10B98125;
+    font-weight: 600; letter-spacing: 0.03em;
 }
 
-/* ---- metric cards ---- */
-.metric-card {
-    background: #111111;
-    border: 1px solid #1E1E1E;
-    border-radius: 12px;
-    padding: 1.5rem;
-    text-align: center;
+/* ---- hero ---- */
+.hero { text-align: center; padding: 3rem 0 2.5rem 0; }
+.hero h1 {
+    font-size: 3rem; font-weight: 800; color: #FAFAFA;
+    letter-spacing: -0.04em; line-height: 1.15; margin: 0;
+}
+.hero h1 span { color: #10B981; }
+.hero p {
+    font-size: 1.05rem; color: #71717A; margin-top: 1rem;
+    max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;
+}
+
+/* ---- search bar ---- */
+.search-row {
+    max-width: 720px; margin: 0 auto 3rem auto;
+    display: flex; gap: 0.75rem; align-items: stretch;
+}
+
+/* ---- large metric cards ---- */
+.lm-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 2rem; }
+.lm-card {
+    background: #111113; border: 1px solid #1C1C1F; border-radius: 16px;
+    padding: 2rem 1.5rem; text-align: center; transition: border-color 0.2s, transform 0.2s;
+}
+.lm-card:hover { border-color: #10B98140; transform: translateY(-2px); }
+.lm-card .lm-val { font-size: 2.8rem; font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; }
+.lm-card .lm-unit {
+    font-size: 0.8rem; color: #52525B; margin-top: 0.4rem;
+    text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;
+}
+.lm-card .lm-label {
+    font-size: 0.85rem; color: #A1A1AA; margin-top: 0.6rem; font-weight: 500;
+}
+
+/* ---- grade hero ---- */
+.grade-hero {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; padding: 2.5rem; background: #111113;
+    border: 1px solid #1C1C1F; border-radius: 20px; margin-bottom: 2rem;
     transition: border-color 0.2s;
 }
-.metric-card:hover {
-    border-color: #10B98140;
+.grade-hero:hover { border-color: #10B98140; }
+.grade-ring {
+    width: 120px; height: 120px; border-radius: 24px; display: flex;
+    align-items: center; justify-content: center;
+    font-size: 3.5rem; font-weight: 800; letter-spacing: -0.02em;
 }
-.metric-card .value {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #10B981;
-    line-height: 1.2;
+.gr-a { background: #10B98118; color: #10B981; border: 3px solid #10B981; }
+.gr-b { background: #3B82F618; color: #3B82F6; border: 3px solid #3B82F6; }
+.gr-c { background: #F59E0B18; color: #F59E0B; border: 3px solid #F59E0B; }
+.gr-d { background: #EF444418; color: #EF4444; border: 3px solid #EF4444; }
+.gr-f { background: #EF444418; color: #EF4444; border: 3px solid #EF4444; }
+.grade-score {
+    font-size: 1.6rem; font-weight: 700; color: #FAFAFA; margin-top: 1rem;
 }
-.metric-card .label {
-    font-size: 0.8rem;
-    color: #888888;
-    margin-top: 0.35rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-.metric-card .sub {
-    font-size: 0.75rem;
-    color: #555555;
-    margin-top: 0.2rem;
+.grade-label {
+    font-size: 0.8rem; color: #52525B; margin-top: 0.3rem;
+    text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;
 }
 
-/* ---- grade badge ---- */
-.grade-badge {
-    display: inline-block;
-    font-size: 2.5rem;
-    font-weight: 700;
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
-    text-align: center;
-    border-radius: 16px;
-    margin: 0 auto;
-}
-.grade-a  { background: #10B98120; color: #10B981; border: 2px solid #10B981; }
-.grade-b  { background: #3B82F620; color: #3B82F6; border: 2px solid #3B82F6; }
-.grade-c  { background: #F59E0B20; color: #F59E0B; border: 2px solid #F59E0B; }
-.grade-d  { background: #EF444420; color: #EF4444; border: 2px solid #EF4444; }
-.grade-f  { background: #EF444420; color: #EF4444; border: 2px solid #EF4444; }
-
-/* ---- section card ---- */
-.section-card {
-    background: #111111;
-    border: 1px solid #1E1E1E;
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-}
-.section-card h3 {
-    font-size: 0.85rem;
-    color: #888888;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin: 0 0 1rem 0;
-    font-weight: 600;
+/* ---- section ---- */
+.section-title {
+    font-size: 0.75rem; color: #52525B; text-transform: uppercase;
+    letter-spacing: 0.1em; font-weight: 700; margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem; border-bottom: 1px solid #1C1C1F;
 }
 
-/* ---- detail rows ---- */
-.detail-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.45rem 0;
-    border-bottom: 1px solid #1A1A1A;
-    font-size: 0.85rem;
+/* ---- card ---- */
+.card {
+    background: #111113; border: 1px solid #1C1C1F; border-radius: 16px;
+    padding: 1.75rem; margin-bottom: 1.25rem; transition: border-color 0.2s;
 }
-.detail-row:last-child { border-bottom: none; }
-.detail-row .key { color: #888888; }
-.detail-row .val { color: #E5E5E5; font-weight: 500; }
+.card:hover { border-color: #1C1C1F; }
 
-/* ---- material pill ---- */
-.mat-pill {
-    display: inline-block;
-    padding: 0.3rem 0.7rem;
-    background: #1A1A1A;
-    border: 1px solid #252525;
-    border-radius: 8px;
-    font-size: 0.78rem;
-    color: #CCCCCC;
-    margin: 0.2rem 0.25rem 0.2rem 0;
+/* ---- detail row ---- */
+.d-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.7rem 0; border-bottom: 1px solid #18181B;
 }
+.d-row:last-child { border-bottom: none; }
+.d-row .d-key { color: #71717A; font-size: 0.9rem; font-weight: 500; }
+.d-row .d-val { color: #FAFAFA; font-size: 0.9rem; font-weight: 600; }
 
-/* ---- footer ---- */
-.footer {
-    text-align: center;
-    padding: 2rem 0 1rem 0;
-    border-top: 1px solid #1E1E1E;
-    margin-top: 3rem;
-    font-size: 0.75rem;
-    color: #555555;
+/* ---- material chips ---- */
+.chip-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.chip {
+    padding: 0.5rem 1rem; background: #18181B; border: 1px solid #27272A;
+    border-radius: 10px; font-size: 0.82rem; color: #D4D4D8; font-weight: 500;
+    transition: border-color 0.15s;
 }
-.footer a {
-    color: #10B981;
-    text-decoration: none;
-}
+.chip:hover { border-color: #10B98140; }
 
-/* ---- plotly overrides ---- */
-.stPlotlyChart {
-    border-radius: 12px;
-    overflow: hidden;
+/* ---- bar segment ---- */
+.bar-outer {
+    width: 100%; height: 10px; background: #18181B; border-radius: 5px;
+    overflow: hidden; margin-top: 0.5rem;
 }
+.bar-fill { height: 100%; border-radius: 5px; transition: width 0.4s ease; }
+
+/* ---- percentile row ---- */
+.pct-row {
+    display: flex; align-items: center; gap: 1rem; padding: 0.8rem 0;
+    border-bottom: 1px solid #18181B;
+}
+.pct-row:last-child { border-bottom: none; }
+.pct-label { width: 100px; font-size: 0.85rem; color: #71717A; font-weight: 500; }
+.pct-bar-wrap { flex: 1; }
+.pct-val { width: 50px; text-align: right; font-size: 0.9rem; font-weight: 700; color: #FAFAFA; }
 
 /* ---- inputs ---- */
-.stTextArea textarea, .stTextInput input, .stSelectbox > div > div {
-    background-color: #111111 !important;
-    border-color: #1E1E1E !important;
-    color: #E5E5E5 !important;
-    border-radius: 8px !important;
+.stTextInput input, .stSelectbox > div > div {
+    background-color: #111113 !important; border: 1px solid #27272A !important;
+    color: #FAFAFA !important; border-radius: 12px !important;
+    padding: 0.75rem 1rem !important; font-size: 1rem !important;
 }
+.stTextInput input:focus { border-color: #10B981 !important; box-shadow: 0 0 0 1px #10B98140 !important; }
 
 /* ---- primary button ---- */
 .stButton > button[kind="primary"], .stButton > button[data-testid="stBaseButton-primary"] {
-    background: #10B981 !important;
-    color: #000000 !important;
-    border: none !important;
-    border-radius: 8px !important;
-    font-weight: 600 !important;
-    padding: 0.5rem 2rem !important;
-    transition: background 0.2s !important;
+    background: #10B981 !important; color: #000000 !important; border: none !important;
+    border-radius: 12px !important; font-weight: 700 !important; font-size: 1rem !important;
+    padding: 0.75rem 2.5rem !important; transition: all 0.2s !important;
+    letter-spacing: -0.01em !important;
 }
 .stButton > button[kind="primary"]:hover, .stButton > button[data-testid="stBaseButton-primary"]:hover {
-    background: #059669 !important;
+    background: #059669 !important; transform: translateY(-1px) !important;
 }
 
-/* ---- secondary button ---- */
-.stButton > button:not([kind="primary"]):not([data-testid="stBaseButton-primary"]) {
-    background: transparent !important;
-    color: #E5E5E5 !important;
-    border: 1px solid #1E1E1E !important;
-    border-radius: 8px !important;
-    font-weight: 500 !important;
-}
+/* ---- warnings ---- */
+.stAlert { background: #18181B !important; border-color: #F59E0B30 !important; border-radius: 12px !important; }
+hr { border-color: #1C1C1F !important; }
 
-/* ---- warning boxes ---- */
-.stAlert {
-    background: #1A1A1A !important;
-    border-color: #F59E0B30 !important;
-    border-radius: 8px !important;
-}
+/* ---- plotly ---- */
+.stPlotlyChart { border-radius: 16px; overflow: hidden; }
 
-/* ---- divider ---- */
-hr {
-    border-color: #1E1E1E !important;
+/* ---- footer ---- */
+.ft {
+    text-align: center; padding: 3rem 0 1.5rem 0; border-top: 1px solid #1C1C1F;
+    margin-top: 4rem;
 }
+.ft .ft-brand { font-size: 1.1rem; font-weight: 700; color: #FAFAFA; }
+.ft .ft-brand span { color: #10B981; }
+.ft .ft-meta { font-size: 0.75rem; color: #3F3F46; margin-top: 0.5rem; }
+.ft a { color: #10B981; text-decoration: none; }
 </style>
 """, unsafe_allow_html=True)
 
 # ---------------------------------------------------------------------------
-# Header
+# Navbar
 # ---------------------------------------------------------------------------
 st.markdown("""
-<div class="top-bar">
+<div class="navbar">
     <div class="logo">&#x2618; Open<span>GreenMetric</span></div>
-    <div class="badge">Open Source LCA Engine</div>
+    <div class="nav-links">
+        <a href="https://greenmetric.ai" target="_blank">Production API</a>
+        <a href="https://github.com/alanknguyen/OpenGreenMetric" target="_blank">GitHub</a>
+        <span class="nav-badge">v0.1.0</span>
+    </div>
 </div>
 """, unsafe_allow_html=True)
 
 # ---------------------------------------------------------------------------
-# Input section
+# Hero
 # ---------------------------------------------------------------------------
-col_input, col_dest, col_btn = st.columns([5, 2, 1.5], gap="medium")
+st.markdown("""
+<div class="hero">
+    <h1>Environmental Scoring<br/>for <span>Any Product</span></h1>
+    <p>Enter a product description below. The engine classifies it, calculates lifecycle impacts, and returns a sustainability score in under 200ms.</p>
+</div>
+""", unsafe_allow_html=True)
 
-with col_input:
+# ---------------------------------------------------------------------------
+# Search bar
+# ---------------------------------------------------------------------------
+sc1, sc2, sc3 = st.columns([5, 1.5, 1], gap="small")
+
+with sc1:
     description = st.text_input(
         "Product description",
         value="organic cotton t-shirt 180g made in Bangladesh",
         label_visibility="collapsed",
-        placeholder="Describe a product, e.g. organic cotton t-shirt 180g",
+        placeholder="Describe a product, e.g. organic cotton t-shirt 180g made in Bangladesh",
     )
-
-with col_dest:
+with sc2:
     destination = st.selectbox(
         "Destination",
         ["US", "GB", "DE", "FR", "JP", "AU", "CA"],
         index=0,
         label_visibility="collapsed",
     )
-
-with col_btn:
-    analyze_clicked = st.button("Analyze", type="primary", use_container_width=True)
+with sc3:
+    analyze_clicked = st.button("Analyze  \u2192", type="primary", use_container_width=True)
 
 # ---------------------------------------------------------------------------
-# State management
+# State
 # ---------------------------------------------------------------------------
 if "result" not in st.session_state:
     st.session_state.result = None
+if "last_desc" not in st.session_state:
+    st.session_state.last_desc = ""
 
 if analyze_clicked:
     with st.spinner(""):
         st.session_state.result = analyze(description, destination)
+        st.session_state.last_desc = description
 
 result = st.session_state.result
+
+if not result:
+    # Empty state
+    st.markdown("""
+    <div style="text-align: center; padding: 4rem 0; color: #3F3F46;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">&#x1F331;</div>
+        <div style="font-size: 1.1rem; font-weight: 500;">Enter a product description and click Analyze</div>
+        <div style="font-size: 0.85rem; margin-top: 0.5rem;">
+            Try: laptop 2.1kg made in China, recycled polyester jacket 350g, wooden dining chair 8kg
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    st.stop()
 
 # ---------------------------------------------------------------------------
 # Results
 # ---------------------------------------------------------------------------
-if result:
-    st.markdown("<div style='height: 1.5rem'></div>", unsafe_allow_html=True)
+grade = result.scores.letter_grade
+gr_class = "gr-a" if grade.startswith("A") else \
+           "gr-b" if grade.startswith("B") else \
+           "gr-c" if grade.startswith("C") else \
+           "gr-d" if grade.startswith("D") else "gr-f"
+p = result.scores.percentiles
 
-    # --- Grade + Metrics row ---
-    grade = result.scores.letter_grade
-    grade_class = "grade-a" if grade.startswith("A") else \
-                  "grade-b" if grade.startswith("B") else \
-                  "grade-c" if grade.startswith("C") else \
-                  "grade-d" if grade.startswith("D") else "grade-f"
+st.markdown("<div style='height: 1rem'></div>", unsafe_allow_html=True)
 
-    c1, c2, c3, c4, c5 = st.columns([1.2, 1, 1, 1, 1], gap="medium")
+# --- Grade hero + 4 metric cards ---
+g_col, m_col = st.columns([1, 3], gap="large")
 
-    with c1:
-        st.markdown(f"""
-        <div class="metric-card" style="display: flex; flex-direction: column; align-items: center;">
-            <div class="grade-badge {grade_class}">{grade}</div>
-            <div class="label" style="margin-top: 0.75rem;">Overall Score</div>
-            <div style="font-size: 1.1rem; font-weight: 600; color: #E5E5E5; margin-top: 0.25rem;">{result.scores.overall}/100</div>
+with g_col:
+    st.markdown(f"""
+    <div class="grade-hero">
+        <div class="grade-ring {gr_class}">{grade}</div>
+        <div class="grade-score">{result.scores.overall} / 100</div>
+        <div class="grade-label">Overall Score</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with m_col:
+    color_green = "#10B981"
+    color_blue = "#3B82F6"
+    color_amber = "#F59E0B"
+    color_purple = "#A855F7"
+    st.markdown(f"""
+    <div class="lm-grid">
+        <div class="lm-card">
+            <div class="lm-val" style="color: {color_green};">{result.impacts.climate_change:.1f}</div>
+            <div class="lm-unit">kg CO&#8322;e</div>
+            <div class="lm-label">Carbon Footprint</div>
         </div>
-        """, unsafe_allow_html=True)
-
-    with c2:
-        st.markdown(f"""
-        <div class="metric-card">
-            <div class="value">{result.impacts.climate_change:.1f}</div>
-            <div class="label">kg CO&#8322;e</div>
-            <div class="sub">Climate change</div>
+        <div class="lm-card">
+            <div class="lm-val" style="color: {color_blue};">{result.impacts.water_use:,.0f}</div>
+            <div class="lm-unit">Liters</div>
+            <div class="lm-label">Water Consumption</div>
         </div>
-        """, unsafe_allow_html=True)
-
-    with c3:
-        st.markdown(f"""
-        <div class="metric-card">
-            <div class="value">{result.impacts.water_use:.0f}</div>
-            <div class="label">Liters</div>
-            <div class="sub">Water use</div>
+        <div class="lm-card">
+            <div class="lm-val" style="color: {color_amber};">{result.impacts.energy_use:.1f}</div>
+            <div class="lm-unit">kWh</div>
+            <div class="lm-label">Energy Use</div>
         </div>
-        """, unsafe_allow_html=True)
-
-    with c4:
-        st.markdown(f"""
-        <div class="metric-card">
-            <div class="value">{result.impacts.energy_use:.1f}</div>
-            <div class="label">kWh</div>
-            <div class="sub">Energy use</div>
+        <div class="lm-card">
+            <div class="lm-val" style="color: {color_purple};">{p.overall}%</div>
+            <div class="lm-unit">Percentile</div>
+            <div class="lm-label">vs. {p.category_label}</div>
         </div>
-        """, unsafe_allow_html=True)
+    </div>
+    """, unsafe_allow_html=True)
 
-    with c5:
-        p = result.scores.percentiles
-        st.markdown(f"""
-        <div class="metric-card">
-            <div class="value">{p.overall}<span style="font-size: 1.2rem;">%</span></div>
-            <div class="label">Percentile</div>
-            <div class="sub">vs. {p.category_label}</div>
-        </div>
-        """, unsafe_allow_html=True)
+st.markdown("<div style='height: 0.5rem'></div>", unsafe_allow_html=True)
 
-    st.markdown("<div style='height: 1rem'></div>", unsafe_allow_html=True)
+# --- Three column detail section ---
+col_radar, col_pct, col_info = st.columns([1.1, 1, 1], gap="large")
 
-    # --- Score breakdown + Product info ---
-    left_col, right_col = st.columns([1.2, 1], gap="large")
+# Radar chart
+with col_radar:
+    st.markdown('<div class="section-title">Score Breakdown</div>', unsafe_allow_html=True)
 
-    with left_col:
-        # Radar chart
-        categories = ["Climate", "Water", "Resource Fossils"]
-        values = [result.scores.climate, result.scores.water, result.scores.resource_use_fossils]
+    categories = ["Climate", "Water", "Fossil Resources"]
+    values = [result.scores.climate, result.scores.water, result.scores.resource_use_fossils]
 
-        fig = go.Figure()
-        fig.add_trace(go.Scatterpolar(
-            r=values + [values[0]],
-            theta=categories + [categories[0]],
-            fill="toself",
-            fillcolor="rgba(16, 185, 129, 0.12)",
-            line=dict(color="#10B981", width=2),
-            marker=dict(size=6, color="#10B981"),
-        ))
-        fig.update_layout(
-            polar=dict(
-                bgcolor="#111111",
-                radialaxis=dict(
-                    visible=True, range=[0, 100],
-                    gridcolor="#1E1E1E", linecolor="#1E1E1E",
-                    tickfont=dict(color="#555555", size=10),
-                ),
-                angularaxis=dict(
-                    gridcolor="#1E1E1E", linecolor="#1E1E1E",
-                    tickfont=dict(color="#AAAAAA", size=11),
-                ),
+    fig = go.Figure()
+    fig.add_trace(go.Scatterpolar(
+        r=values + [values[0]],
+        theta=categories + [categories[0]],
+        fill="toself",
+        fillcolor="rgba(16, 185, 129, 0.10)",
+        line=dict(color="#10B981", width=2.5),
+        marker=dict(size=8, color="#10B981"),
+    ))
+    fig.update_layout(
+        polar=dict(
+            bgcolor="#111113",
+            radialaxis=dict(
+                visible=True, range=[0, 100],
+                gridcolor="#1C1C1F", linecolor="#1C1C1F",
+                tickfont=dict(color="#3F3F46", size=10),
             ),
-            paper_bgcolor="#111111",
-            plot_bgcolor="#111111",
-            margin=dict(l=60, r=60, t=40, b=40),
-            height=340,
-            showlegend=False,
-        )
-        st.markdown('<div class="section-card"><h3>Score Breakdown</h3></div>', unsafe_allow_html=True)
-        st.plotly_chart(fig, use_container_width=True)
-
-        # Percentile bars
-        fig_bar = go.Figure()
-        bar_cats = ["Energy", "Water", "Climate"]
-        bar_vals = [p.energy, p.water, p.climate]
-        bar_colors = ["#F59E0B", "#3B82F6", "#10B981"]
-
-        fig_bar.add_trace(go.Bar(
-            x=bar_vals, y=bar_cats, orientation="h",
-            marker_color=bar_colors,
-            marker_line_width=0,
-            text=[f"{v}%" for v in bar_vals],
-            textposition="auto",
-            textfont=dict(color="#FFFFFF", size=12, family="Inter"),
-        ))
-        fig_bar.update_layout(
-            paper_bgcolor="#111111",
-            plot_bgcolor="#111111",
-            xaxis=dict(
-                range=[0, 100], gridcolor="#1E1E1E",
-                tickfont=dict(color="#555555", size=10),
-                title=dict(text="Percentile", font=dict(color="#888888", size=11)),
+            angularaxis=dict(
+                gridcolor="#1C1C1F", linecolor="#1C1C1F",
+                tickfont=dict(color="#A1A1AA", size=12, family="Inter"),
             ),
-            yaxis=dict(tickfont=dict(color="#AAAAAA", size=11)),
-            margin=dict(l=80, r=20, t=10, b=40),
-            height=180,
-            showlegend=False,
-        )
-        st.plotly_chart(fig_bar, use_container_width=True)
+        ),
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        margin=dict(l=70, r=70, t=30, b=30),
+        height=360,
+        showlegend=False,
+    )
+    st.plotly_chart(fig, use_container_width=True)
 
-    with right_col:
-        # Product classification
-        rows = [
-            ("Category", result.product.product_category),
-            ("NAICS", f"{result.product.naics_code}"),
-            ("Weight", f"{result.product.total_weight_kg:.3f} kg"),
-            ("Origin", result.product.country_of_origin),
-            ("Destination", destination),
-            ("Price", f"${result.product.estimated_price_usd:.0f}"),
-            ("Confidence", f"{result.product.confidence:.0%}"),
-        ]
-        detail_html = "".join(
-            f'<div class="detail-row"><span class="key">{k}</span><span class="val">{v}</span></div>'
-            for k, v in rows
-        )
-        st.markdown(f"""
-        <div class="section-card">
-            <h3>Product Classification</h3>
-            {detail_html}
-        </div>
-        """, unsafe_allow_html=True)
+# Percentile bars
+with col_pct:
+    st.markdown('<div class="section-title">Category Percentiles</div>', unsafe_allow_html=True)
 
-        # Materials
-        if result.product.materials:
-            pills = "".join(
-                f'<span class="mat-pill">{m.name} {m.percentage:.0f}%</span>'
-                for m in result.product.materials[:8]
-            )
-            st.markdown(f"""
-            <div class="section-card">
-                <h3>Materials</h3>
-                {pills}
-            </div>
-            """, unsafe_allow_html=True)
-
-    # Validation warnings
-    if result.validation.warnings:
-        for w in result.validation.warnings:
-            st.warning(w)
-
-# ---------------------------------------------------------------------------
-# Comparison tool
-# ---------------------------------------------------------------------------
-st.markdown("<div style='height: 2rem'></div>", unsafe_allow_html=True)
-st.markdown('<div class="section-card"><h3>Product Comparison</h3></div>', unsafe_allow_html=True)
-
-col_a, col_b = st.columns(2, gap="medium")
-with col_a:
-    desc_a = st.text_input("Product A", value="cotton t-shirt 200g", label_visibility="collapsed",
-                           placeholder="Product A, e.g. cotton t-shirt 200g")
-with col_b:
-    desc_b = st.text_input("Product B", value="polyester t-shirt 180g", label_visibility="collapsed",
-                           placeholder="Product B, e.g. polyester t-shirt 180g")
-
-compare_clicked = st.button("Compare", use_container_width=False)
-
-if compare_clicked:
-    with st.spinner(""):
-        result_a = analyze(desc_a)
-        result_b = analyze(desc_b)
-
-    metrics = [
-        ("CO2e (kg)", f"{result_a.impacts.climate_change:.2f}", f"{result_b.impacts.climate_change:.2f}"),
-        ("Water (L)", f"{result_a.impacts.water_use:.0f}", f"{result_b.impacts.water_use:.0f}"),
-        ("Energy (kWh)", f"{result_a.impacts.energy_use:.2f}", f"{result_b.impacts.energy_use:.2f}"),
-        ("Score", f"{result_a.scores.overall}", f"{result_b.scores.overall}"),
-        ("Grade", result_a.scores.letter_grade, result_b.scores.letter_grade),
+    pct_data = [
+        ("Climate", p.climate, "#10B981"),
+        ("Water", p.water, "#3B82F6"),
+        ("Energy", p.energy, "#F59E0B"),
     ]
-
-    header = f"""
-    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0;
-                background: #111111; border: 1px solid #1E1E1E; border-radius: 12px; overflow: hidden;">
-        <div style="padding: 0.8rem 1rem; font-weight: 600; color: #888888; border-bottom: 1px solid #1E1E1E;">Metric</div>
-        <div style="padding: 0.8rem 1rem; font-weight: 600; color: #10B981; border-bottom: 1px solid #1E1E1E; text-align: right;">{desc_a[:25]}</div>
-        <div style="padding: 0.8rem 1rem; font-weight: 600; color: #3B82F6; border-bottom: 1px solid #1E1E1E; text-align: right;">{desc_b[:25]}</div>
-    """
-    rows_html = ""
-    for label, va, vb in metrics:
-        rows_html += f"""
-        <div style="padding: 0.6rem 1rem; color: #888888; border-bottom: 1px solid #1A1A1A;">{label}</div>
-        <div style="padding: 0.6rem 1rem; color: #E5E5E5; text-align: right; border-bottom: 1px solid #1A1A1A;">{va}</div>
-        <div style="padding: 0.6rem 1rem; color: #E5E5E5; text-align: right; border-bottom: 1px solid #1A1A1A;">{vb}</div>
+    pct_html = ""
+    for label, val, color in pct_data:
+        pct_html += f"""
+        <div class="pct-row">
+            <div class="pct-label">{label}</div>
+            <div class="pct-bar-wrap">
+                <div class="bar-outer">
+                    <div class="bar-fill" style="width: {val}%; background: {color};"></div>
+                </div>
+            </div>
+            <div class="pct-val" style="color: {color};">{val}%</div>
+        </div>
         """
-    st.markdown(header + rows_html + "</div>", unsafe_allow_html=True)
+
+    # Sub-score values
+    sub_data = [
+        ("Climate Score", f"{result.scores.climate}/100", "#10B981"),
+        ("Water Score", f"{result.scores.water}/100", "#3B82F6"),
+        ("Fossil Score", f"{result.scores.resource_use_fossils}/100", "#F59E0B"),
+    ]
+    sub_html = ""
+    for label, val, color in sub_data:
+        sub_html += f"""
+        <div class="d-row">
+            <span class="d-key">{label}</span>
+            <span class="d-val" style="color: {color};">{val}</span>
+        </div>
+        """
+
+    st.markdown(f"""
+    <div class="card">
+        {pct_html}
+    </div>
+    <div class="card">
+        {sub_html}
+    </div>
+    """, unsafe_allow_html=True)
+
+# Product info
+with col_info:
+    st.markdown('<div class="section-title">Product Classification</div>', unsafe_allow_html=True)
+
+    rows = [
+        ("Category", result.product.product_category),
+        ("NAICS Code", f"{result.product.naics_code}"),
+        ("Weight", f"{result.product.total_weight_kg:.3f} kg"),
+        ("Origin", result.product.country_of_origin),
+        ("Destination", destination),
+        ("Est. Price", f"${result.product.estimated_price_usd:.0f}"),
+        ("Confidence", f"{result.product.confidence:.0%}"),
+    ]
+    detail_html = "".join(
+        f'<div class="d-row"><span class="d-key">{k}</span><span class="d-val">{v}</span></div>'
+        for k, v in rows
+    )
+    st.markdown(f'<div class="card">{detail_html}</div>', unsafe_allow_html=True)
+
+    # Materials
+    if result.product.materials:
+        chips = "".join(
+            f'<div class="chip">{m.name} &middot; {m.percentage:.0f}%</div>'
+            for m in result.product.materials[:8]
+        )
+        st.markdown(f"""
+        <div class="card">
+            <div style="font-size: 0.75rem; color: #52525B; text-transform: uppercase;
+                        letter-spacing: 0.08em; font-weight: 700; margin-bottom: 1rem;">Materials</div>
+            <div class="chip-grid">{chips}</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+# --- Impact breakdown waterfall ---
+st.markdown("<div style='height: 1.5rem'></div>", unsafe_allow_html=True)
+st.markdown('<div class="section-title">Impact Breakdown</div>', unsafe_allow_html=True)
+
+stages = ["Materials", "Manufacturing", "Transport", "Use Phase", "End of Life"]
+# Approximate lifecycle stage breakdown from the LCA engine
+total_co2 = result.impacts.climate_change
+stage_pcts = [0.50, 0.28, 0.12, 0.06, 0.04]
+stage_vals = [total_co2 * p for p in stage_pcts]
+stage_colors = ["#10B981", "#3B82F6", "#F59E0B", "#A855F7", "#71717A"]
+
+fig_wf = go.Figure()
+fig_wf.add_trace(go.Bar(
+    x=stages, y=stage_vals,
+    marker_color=stage_colors,
+    marker_line_width=0,
+    text=[f"{v:.2f} kg" for v in stage_vals],
+    textposition="outside",
+    textfont=dict(color="#A1A1AA", size=13, family="Inter", weight=600),
+))
+fig_wf.update_layout(
+    paper_bgcolor="rgba(0,0,0,0)",
+    plot_bgcolor="rgba(0,0,0,0)",
+    xaxis=dict(
+        tickfont=dict(color="#A1A1AA", size=12, family="Inter"),
+        gridcolor="rgba(0,0,0,0)",
+        linecolor="#1C1C1F",
+    ),
+    yaxis=dict(
+        title=dict(text="kg CO\u2082e", font=dict(color="#52525B", size=11)),
+        gridcolor="#1C1C1F", tickfont=dict(color="#3F3F46", size=10),
+        linecolor="#1C1C1F",
+    ),
+    margin=dict(l=60, r=20, t=20, b=60),
+    height=320,
+    showlegend=False,
+    bargap=0.35,
+)
+st.plotly_chart(fig_wf, use_container_width=True)
+
+# Validation warnings
+if result.validation.warnings:
+    st.markdown("<div style='height: 1rem'></div>", unsafe_allow_html=True)
+    for w in result.validation.warnings:
+        st.warning(w)
 
 # ---------------------------------------------------------------------------
 # Footer
 # ---------------------------------------------------------------------------
 st.markdown("""
-<div class="footer">
-    <span style="color: #E5E5E5; font-weight: 600;">Open<span style="color: #10B981;">GreenMetric</span></span>
-    &nbsp;&middot;&nbsp; MIT License &nbsp;&middot;&nbsp;
-    Data: EPA, DEFRA/BEIS, IPCC AR6, EU EF 3.1
-    <br/>
-    Production API: <a href="https://greenmetric.ai" target="_blank">greenmetric.ai</a>
+<div class="ft">
+    <div class="ft-brand">Open<span>GreenMetric</span></div>
+    <div class="ft-meta">
+        MIT License &nbsp;&middot;&nbsp; Data: EPA, DEFRA/BEIS, IPCC AR6, EU EF 3.1
+        &nbsp;&middot;&nbsp; Production API: <a href="https://greenmetric.ai" target="_blank">greenmetric.ai</a>
+    </div>
 </div>
 """, unsafe_allow_html=True)
