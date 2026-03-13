@@ -1,10 +1,10 @@
-"""Score decomposition waterfall animation."""
+"""Score decomposition waterfall animation with dense technical annotations."""
 
 import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-from .style import apply_style, save_gif, get_temp_dir, COLORS
+from .style import apply_style, save_gif, get_temp_dir, COLORS, annotation_box, method_label
 
 apply_style()
 
@@ -26,16 +26,19 @@ def generate():
     frames = []
 
     n_steps = len(WATERFALL_STEPS)
-    n_frames = n_steps * 6 + 10  # 6 frames per step + 10 hold
+    n_frames = n_steps * 6 + 10
+
+    all_deltas = [s[2] for s in WATERFALL_STEPS if s[2] < 0]
+    total_deduction = sum(abs(d) for d in all_deltas)
+    largest_name = max(
+        ((s[0], abs(s[2])) for s in WATERFALL_STEPS if s[2] < 0),
+        key=lambda x: x[1]
+    )
 
     for frame_idx in range(n_frames):
         steps_to_show = min(frame_idx // 6 + 1, n_steps)
 
-        fig, ax = plt.subplots(figsize=(10, 6))
-
-        labels = [s[0] for s in WATERFALL_STEPS[:steps_to_show]]
-        running = [s[1] for s in WATERFALL_STEPS[:steps_to_show]]
-        deltas = [s[2] for s in WATERFALL_STEPS[:steps_to_show]]
+        fig, ax = plt.subplots(figsize=(11, 6.5))
 
         bottoms = []
         heights = []
@@ -58,35 +61,63 @@ def generate():
         ax.bar(range(steps_to_show), heights, bottom=bottoms, color=colors,
                alpha=0.8, edgecolor="white", width=0.6)
 
-        # Connector lines
         for i in range(1, steps_to_show):
             prev_val = WATERFALL_STEPS[i - 1][1]
-            if i - 1 == 0:
-                prev_top = prev_val
-            else:
-                prev_top = WATERFALL_STEPS[i - 1][1]
-            ax.plot([i - 0.3, i - 0.3, i + 0.3], [prev_top, prev_top, prev_top],
-                   color="#AAAAAA", linewidth=0.5, linestyle="--")
+            ax.plot([i - 0.3, i + 0.3], [prev_val, prev_val],
+                    color="#AAAAAA", linewidth=0.5, linestyle="--")
 
-        # Value labels
         for i, (label, value, delta) in enumerate(WATERFALL_STEPS[:steps_to_show]):
             if i == 0 or i == n_steps - 1:
                 ax.text(i, value + 2, str(value), ha="center", fontweight="bold", fontsize=11)
             else:
-                ax.text(i, value + abs(delta) + 1, f"{delta}", ha="center",
-                       fontsize=9, color=COLORS["warning"], fontweight="bold")
+                pct_of_total = abs(delta) / total_deduction * 100
+                ax.text(i, value + abs(delta) + 1, f"{delta} ({pct_of_total:.0f}%)",
+                        ha="center", fontsize=8, color=COLORS["warning"], fontweight="bold")
 
+        step_labels = [s[0] for s in WATERFALL_STEPS[:steps_to_show]]
         ax.set_xticks(range(steps_to_show))
-        ax.set_xticklabels(labels, rotation=30, ha="right", fontsize=9)
+        ax.set_xticklabels(step_labels, rotation=30, ha="right", fontsize=9)
         ax.set_ylabel("Environmental Score (0-100)")
-        ax.set_title("Score Decomposition Waterfall — Cotton T-Shirt", fontweight="bold")
+        ax.set_title("Score Decomposition Waterfall: Cotton T-Shirt", fontweight="bold")
         ax.set_ylim(0, 115)
         ax.set_xlim(-0.5, n_steps - 0.5)
         ax.grid(axis="y", alpha=0.3)
 
-        plt.tight_layout()
+        formula_text = (
+            "score = 100 \u00d7 (1 \u2212 (v \u2212 min) / (max \u2212 min))\n\n"
+            "Weights:\n"
+            "  Climate  55.58%\n"
+            "  Water    22.46%\n"
+            "  Fossils  21.96%"
+        )
+        annotation_box(ax, formula_text, loc="upper-right", fontsize=6)
+
+        shown_deltas = [s[2] for s in WATERFALL_STEPS[:steps_to_show] if s[2] < 0]
+        cum_ded = sum(abs(d) for d in shown_deltas)
+        current_val = WATERFALL_STEPS[min(steps_to_show - 1, n_steps - 1)][1]
+        cum_text = (
+            f"Deduction: \u2212{cum_ded} pts\n"
+            f"Remaining: {current_val}/100\n"
+            f"Largest: {largest_name[0]} (\u2212{largest_name[1]})"
+        )
+        annotation_box(ax, cum_text, loc="lower-left", fontsize=6)
+
+        grade_text = (
+            "Grade Scale:\n"
+            "A+ \u226590  A \u226580  B+ \u226570\n"
+            "B  \u226560  C+ \u226550  C  \u226540\n"
+            "D  \u226530  F  <30\n"
+            "\u2192 Final: B (64)"
+        )
+        annotation_box(ax, grade_text, loc="lower-right", fontsize=6)
+
+        fig.subplots_adjust(bottom=0.10)
+        method_label(fig, "Weighted Multi-Criteria Score Decomposition  |  "
+                     "Product: cotton t-shirt  |  Final Grade: B (64/100)")
+
+        plt.tight_layout(rect=[0, 0.04, 1, 0.95])
         path = os.path.join(tmp, f"frame_{frame_idx:04d}.png")
-        plt.savefig(path, dpi=100, bbox_inches="tight")
+        plt.savefig(path, dpi=100, facecolor="white")
         plt.close()
         frames.append(path)
 

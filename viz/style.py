@@ -40,10 +40,34 @@ COLORS = {
 
 ANIMATION_DIR = os.path.join(os.path.dirname(__file__), "..", "animations")
 
+_BOX_STYLE = dict(boxstyle="round,pad=0.3", fc="white", ec="#CCCCCC", alpha=0.92)
+
 
 def apply_style():
     """Apply the clean white OpenGreenMetric style."""
     plt.rcParams.update(STYLE)
+
+
+def annotation_box(ax, text, loc="upper-right", fontsize=7):
+    """Place a white-background rounded text box at a named location on an axes.
+
+    Locations: upper-left, upper-right, lower-left, lower-right
+    """
+    loc_map = {
+        "upper-left": (0.02, 0.98, "top", "left"),
+        "upper-right": (0.98, 0.98, "top", "right"),
+        "lower-left": (0.02, 0.02, "bottom", "left"),
+        "lower-right": (0.98, 0.02, "bottom", "right"),
+    }
+    x, y, va, ha = loc_map.get(loc, loc_map["upper-right"])
+    return ax.text(x, y, text, transform=ax.transAxes, fontsize=fontsize,
+                   va=va, ha=ha, family="monospace", bbox=_BOX_STYLE, zorder=10)
+
+
+def method_label(fig, text, fontsize=7):
+    """Place a bottom-center methodology label on a figure."""
+    return fig.text(0.5, 0.01, text, ha="center", va="bottom",
+                    fontsize=fontsize, color="#999999", style="italic")
 
 
 def save_gif(frames: list[str], output_name: str, duration: float = 0.15, loop: int = 0):
