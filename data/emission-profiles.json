@@ -1,0 +1,1092 @@
+{
+  "metadata": {
+    "description": "Multi-substance emission profiles per activity. Values are kg of substance emitted per functional unit (per kWh for energy, per kg for materials, per tonne-km for transport).",
+    "sources": [
+      "DEFRA/BEIS Conversion Factors 2024",
+      "EPA GHG Emission Factors Hub 2024",
+      "IEA World Energy Outlook 2023",
+      "NREL USLCI via Federal LCA Commons 2023",
+      "ProBas (German Federal Environment Agency) 2023",
+      "ELCD (European Platform on LCA) 2023",
+      "Ember Climate Open Data (CC-BY-4.0) 2024"
+    ]
+  },
+  "_provenance": {
+    "_description": "Source database and year for each emission profile. Keys match material/grid/transport keys.",
+    "steel_virgin": { "source": "DEFRA", "year": 2024 },
+    "steel_recycled": { "source": "DEFRA", "year": 2024 },
+    "aluminum_virgin": { "source": "DEFRA", "year": 2024 },
+    "aluminum": { "source": "DEFRA", "year": 2024 },
+    "copper": { "source": "DEFRA", "year": 2024 },
+    "glass": { "source": "DEFRA", "year": 2024 },
+    "cotton": { "source": "DEFRA", "year": 2024 },
+    "polyester": { "source": "DEFRA", "year": 2024 },
+    "nylon": { "source": "DEFRA", "year": 2024 },
+    "leather": { "source": "DEFRA", "year": 2024 },
+    "rubber_synthetic": { "source": "DEFRA", "year": 2024 },
+    "pp": { "source": "DEFRA", "year": 2024 },
+    "hdpe": { "source": "DEFRA", "year": 2024 },
+    "abs": { "source": "DEFRA", "year": 2024 },
+    "pcb": { "source": "DEFRA", "year": 2024 },
+    "lithium_battery": { "source": "DEFRA", "year": 2024 },
+    "silicon_wafer": { "source": "DEFRA", "year": 2024 },
+    "timber_hardwood": { "source": "DEFRA", "year": 2024 },
+    "timber_softwood": { "source": "DEFRA", "year": 2024 },
+    "mdf": { "source": "DEFRA", "year": 2024 },
+    "plywood": { "source": "DEFRA", "year": 2024 },
+    "paper_virgin": { "source": "DEFRA", "year": 2024 },
+    "cardboard": { "source": "DEFRA", "year": 2024 },
+    "carbon_fiber": { "source": "DEFRA", "year": 2024 },
+    "foam": { "source": "DEFRA", "year": 2024 },
+    "ceramic": { "source": "DEFRA", "year": 2024 },
+    "denim": { "source": "DEFRA", "year": 2024 },
+    "titanium": { "source": "DEFRA", "year": 2024 },
+    "bamboo": { "source": "DEFRA", "year": 2024 },
+    "pu_synthetic": { "source": "DEFRA", "year": 2024 },
+    "foam_eva": { "source": "DEFRA", "year": 2024 },
+    "down_feather": { "source": "DEFRA", "year": 2024 },
+    "hemp": { "source": "DEFRA", "year": 2024 },
+    "tencel": { "source": "DEFRA", "year": 2024 },
+    "cork": { "source": "DEFRA", "year": 2024 },
+    "pet": { "source": "ProBas", "year": 2023 },
+    "pvc": { "source": "ProBas", "year": 2023 },
+    "ldpe": { "source": "NREL USLCI", "year": 2023 },
+    "polycarbonate": { "source": "ProBas", "year": 2023 },
+    "pla_bioplastic": { "source": "ELCD", "year": 2023 },
+    "recycled_polyester": { "source": "ProBas", "year": 2023 },
+    "wool": { "source": "DEFRA + literature", "year": 2024 },
+    "silk": { "source": "literature", "year": 2023 },
+    "linen": { "source": "ELCD", "year": 2023 },
+    "organic_cotton": { "source": "ProBas", "year": 2023 },
+    "acrylic": { "source": "ProBas", "year": 2023 },
+    "spandex": { "source": "literature", "year": 2023 },
+    "viscose": { "source": "ELCD", "year": 2023 },
+    "jute": { "source": "literature", "year": 2023 },
+    "stainless_steel": { "source": "NREL USLCI", "year": 2023 },
+    "zinc": { "source": "NREL USLCI", "year": 2023 },
+    "tin": { "source": "literature", "year": 2023 },
+    "nickel": { "source": "NREL USLCI", "year": 2023 },
+    "aluminum_recycled": { "source": "NREL USLCI", "year": 2023 },
+    "gold": { "source": "literature", "year": 2023 },
+    "silver": { "source": "literature", "year": 2023 },
+    "brass": { "source": "ProBas", "year": 2023 },
+    "concrete": { "source": "NREL USLCI", "year": 2023 },
+    "cement": { "source": "NREL USLCI", "year": 2023 },
+    "brick": { "source": "ProBas", "year": 2023 },
+    "mineral_wool": { "source": "ELCD", "year": 2023 },
+    "gypsum": { "source": "ELCD", "year": 2023 },
+    "rubber_natural": { "source": "ProBas", "year": 2023 },
+    "paper_recycled": { "source": "ELCD", "year": 2023 },
+    "epoxy": { "source": "ProBas", "year": 2023 },
+    "fiberglass": { "source": "NREL USLCI", "year": 2023 },
+    "steel_virgin_eu": { "source": "ProBas", "year": 2023 },
+    "steel_virgin_us": { "source": "NREL USLCI", "year": 2023 },
+    "aluminum_primary_eu": { "source": "ProBas", "year": 2023 },
+    "aluminum_primary_us": { "source": "NREL USLCI", "year": 2023 }
+  },
+  "energy_sources": {
+    "_unit": "kg substance per kWh generated",
+    "grid_CN": {
+      "CO2_fossil": 0.555,
+      "SO2": 1.5e-3,
+      "NOx": 1.2e-3,
+      "PM2.5": 5.0e-5,
+      "CH4_fossil": 2.0e-4,
+      "NMVOC": 1.0e-5,
+      "Hg_air": 3.0e-9,
+      "hard_coal_MJ": 7.56
+    },
+    "grid_US": {
+      "CO2_fossil": 0.371,
+      "SO2": 6.0e-4,
+      "NOx": 4.0e-4,
+      "PM2.5": 2.0e-5,
+      "CH4_fossil": 1.5e-4,
+      "NMVOC": 8.0e-6,
+      "Hg_air": 1.5e-9,
+      "Rn_222_air": 0.8,
+      "hard_coal_MJ": 4.1,
+      "natural_gas_MJ": 2.88
+    },
+    "grid_EU": {
+      "CO2_fossil": 0.23,
+      "SO2": 3.0e-4,
+      "NOx": 3.0e-4,
+      "PM2.5": 1.0e-5,
+      "CH4_fossil": 1.0e-4,
+      "NMVOC": 5.0e-6,
+      "Hg_air": 8.0e-10,
+      "Rn_222_air": 1.5,
+      "hard_coal_MJ": 2.16,
+      "natural_gas_MJ": 2.52
+    },
+    "grid_IN": {
+      "CO2_fossil": 0.708,
+      "SO2": 2.5e-3,
+      "NOx": 1.8e-3,
+      "PM2.5": 8.0e-5,
+      "CH4_fossil": 2.5e-4,
+      "hard_coal_MJ": 9.36
+    },
+    "grid_JP": {
+      "CO2_fossil": 0.434,
+      "SO2": 4.0e-4,
+      "NOx": 3.5e-4,
+      "PM2.5": 1.5e-5,
+      "CH4_fossil": 1.2e-4,
+      "Rn_222_air": 0.3,
+      "natural_gas_MJ": 4.32
+    },
+    "grid_KR": {
+      "CO2_fossil": 0.415,
+      "SO2": 5.0e-4,
+      "NOx": 3.5e-4,
+      "PM2.5": 1.5e-5,
+      "CH4_fossil": 1.3e-4,
+      "Rn_222_air": 1.2,
+      "hard_coal_MJ": 3.96
+    },
+    "grid_DE": {
+      "CO2_fossil": 0.338,
+      "SO2": 2.5e-4,
+      "NOx": 2.8e-4,
+      "PM2.5": 1.0e-5,
+      "CH4_fossil": 1.0e-4,
+      "hard_coal_MJ": 2.88,
+      "natural_gas_MJ": 1.8
+    },
+    "grid_VN": {
+      "CO2_fossil": 0.53,
+      "SO2": 1.2e-3,
+      "NOx": 1.0e-3,
+      "PM2.5": 4.0e-5,
+      "CH4_fossil": 1.8e-4,
+      "hard_coal_MJ": 6.48
+    },
+    "grid_BD": {
+      "CO2_fossil": 0.58,
+      "SO2": 1.8e-3,
+      "NOx": 1.4e-3,
+      "PM2.5": 6.0e-5,
+      "natural_gas_MJ": 7.2
+    },
+    "grid_TW": {
+      "CO2_fossil": 0.502,
+      "SO2": 5.5e-4,
+      "NOx": 4.0e-4,
+      "PM2.5": 2.0e-5,
+      "hard_coal_MJ": 4.68
+    },
+    "grid_GB": {
+      "CO2_fossil": 0.207,
+      "SO2": 2.0e-4,
+      "NOx": 2.5e-4,
+      "PM2.5": 8.0e-6,
+      "natural_gas_MJ": 3.24
+    },
+    "grid_IT": {
+      "CO2_fossil": 0.257,
+      "SO2": 2.5e-4,
+      "NOx": 2.8e-4,
+      "PM2.5": 1.0e-5,
+      "natural_gas_MJ": 3.6
+    },
+    "grid_FR": {
+      "CO2_fossil": 0.052,
+      "SO2": 5.0e-5,
+      "NOx": 8.0e-5,
+      "PM2.5": 3.0e-6,
+      "CH4_fossil": 2.0e-5,
+      "Rn_222_air": 4.5,
+      "natural_gas_MJ": 0.36
+    },
+    "grid_ES": {
+      "CO2_fossil": 0.15,
+      "SO2": 1.5e-4,
+      "NOx": 2.0e-4,
+      "PM2.5": 7.0e-6,
+      "CH4_fossil": 6.0e-5,
+      "natural_gas_MJ": 1.8
+    },
+    "grid_NL": {
+      "CO2_fossil": 0.328,
+      "SO2": 1.8e-4,
+      "NOx": 2.5e-4,
+      "PM2.5": 8.0e-6,
+      "CH4_fossil": 1.2e-4,
+      "natural_gas_MJ": 4.68
+    },
+    "grid_PL": {
+      "CO2_fossil": 0.635,
+      "SO2": 1.8e-3,
+      "NOx": 1.2e-3,
+      "PM2.5": 5.0e-5,
+      "CH4_fossil": 2.0e-4,
+      "hard_coal_MJ": 8.28
+    },
+    "grid_SE": {
+      "CO2_fossil": 0.012,
+      "SO2": 2.0e-5,
+      "NOx": 3.0e-5,
+      "PM2.5": 1.0e-6,
+      "CH4_fossil": 5.0e-6,
+      "Rn_222_air": 0.2
+    },
+    "grid_AT": {
+      "CO2_fossil": 0.085,
+      "SO2": 6.0e-5,
+      "NOx": 1.0e-4,
+      "PM2.5": 4.0e-6,
+      "CH4_fossil": 3.0e-5,
+      "natural_gas_MJ": 0.72
+    },
+    "grid_TH": {
+      "CO2_fossil": 0.438,
+      "SO2": 8.0e-4,
+      "NOx": 6.0e-4,
+      "PM2.5": 2.5e-5,
+      "CH4_fossil": 1.5e-4,
+      "natural_gas_MJ": 4.68,
+      "hard_coal_MJ": 2.52
+    },
+    "grid_ID": {
+      "CO2_fossil": 0.671,
+      "SO2": 1.6e-3,
+      "NOx": 1.3e-3,
+      "PM2.5": 5.5e-5,
+      "CH4_fossil": 2.2e-4,
+      "hard_coal_MJ": 7.92
+    },
+    "grid_BR": {
+      "CO2_fossil": 0.074,
+      "SO2": 5.0e-5,
+      "NOx": 1.0e-4,
+      "PM2.5": 4.0e-6,
+      "CH4_fossil": 3.5e-5
+    },
+    "grid_MX": {
+      "CO2_fossil": 0.423,
+      "SO2": 6.0e-4,
+      "NOx": 5.0e-4,
+      "PM2.5": 2.0e-5,
+      "CH4_fossil": 1.4e-4,
+      "natural_gas_MJ": 4.32,
+      "crude_oil_MJ": 1.44
+    },
+    "grid_PH": {
+      "CO2_fossil": 0.54,
+      "SO2": 1.1e-3,
+      "NOx": 9.0e-4,
+      "PM2.5": 3.5e-5,
+      "CH4_fossil": 1.8e-4,
+      "hard_coal_MJ": 5.76
+    },
+    "grid_MY": {
+      "CO2_fossil": 0.485,
+      "SO2": 7.0e-4,
+      "NOx": 6.0e-4,
+      "PM2.5": 2.5e-5,
+      "CH4_fossil": 1.6e-4,
+      "natural_gas_MJ": 5.04
+    },
+    "grid_AU": {
+      "CO2_fossil": 0.51,
+      "SO2": 1.0e-3,
+      "NOx": 8.0e-4,
+      "PM2.5": 3.0e-5,
+      "CH4_fossil": 1.8e-4,
+      "hard_coal_MJ": 5.4,
+      "natural_gas_MJ": 1.44
+    },
+    "grid_CA": {
+      "CO2_fossil": 0.11,
+      "SO2": 1.0e-4,
+      "NOx": 1.5e-4,
+      "PM2.5": 5.0e-6,
+      "CH4_fossil": 5.0e-5,
+      "natural_gas_MJ": 1.08
+    },
+    "grid_ZA": {
+      "CO2_fossil": 0.9,
+      "SO2": 2.8e-3,
+      "NOx": 2.0e-3,
+      "PM2.5": 9.0e-5,
+      "CH4_fossil": 3.0e-4,
+      "hard_coal_MJ": 10.8
+    }
+  },
+  "materials": {
+    "_unit": "kg substance per kg material produced",
+    "steel_virgin": {
+      "CO2_fossil": 1.85,
+      "SO2": 8.0e-3,
+      "NOx": 3.0e-3,
+      "PM2.5": 4.0e-4,
+      "PM10": 8.0e-4,
+      "CO": 0.025,
+      "Fe_ore": 1.5,
+      "hard_coal_MJ": 18.0,
+      "water_consumed": 0.025
+    },
+    "steel_recycled": {
+      "CO2_fossil": 0.42,
+      "SO2": 1.5e-3,
+      "NOx": 8.0e-4,
+      "PM2.5": 1.5e-4,
+      "hard_coal_MJ": 4.5,
+      "water_consumed": 0.012
+    },
+    "aluminum_virgin": {
+      "CO2_fossil": 8.24,
+      "SO2": 0.032,
+      "NOx": 5.0e-3,
+      "PM2.5": 6.0e-4,
+      "HF": 2.0e-4,
+      "Al_ore": 5.0,
+      "crude_oil_MJ": 12.0,
+      "hard_coal_MJ": 82.0,
+      "water_consumed": 0.065
+    },
+    "aluminum": {
+      "CO2_fossil": 4.5,
+      "SO2": 0.016,
+      "NOx": 3.0e-3,
+      "PM2.5": 3.5e-4,
+      "Al_ore": 2.5,
+      "hard_coal_MJ": 42.0,
+      "water_consumed": 0.035
+    },
+    "copper": {
+      "CO2_fossil": 3.5,
+      "SO2": 0.045,
+      "NOx": 2.0e-3,
+      "Cu_ore": 100.0,
+      "hard_coal_MJ": 30.0,
+      "Cu_water": 1.5e-5,
+      "water_consumed": 0.05
+    },
+    "glass": {
+      "CO2_fossil": 0.86,
+      "SO2": 3.0e-3,
+      "NOx": 4.0e-3,
+      "PM2.5": 2.0e-4,
+      "PM10": 3.0e-4,
+      "NH3": 5.0e-5,
+      "natural_gas_MJ": 8.5,
+      "water_consumed": 0.008
+    },
+    "cotton": {
+      "CO2_fossil": 5.89,
+      "N2O": 0.012,
+      "PO4": 3.0e-3,
+      "NO3_water": 0.015,
+      "PM2.5": 1.0e-4,
+      "NH3": 8.0e-3,
+      "SO2": 1.0e-3,
+      "NMVOC": 3.0e-4,
+      "land_occupation_annual_crop": 6.0,
+      "water_consumed": 10.0
+    },
+    "polyester": {
+      "CO2_fossil": 5.55,
+      "SO2": 2.0e-3,
+      "NMVOC": 8.0e-3,
+      "NOx": 2.5e-3,
+      "PM2.5": 1.0e-4,
+      "NH3": 2.0e-4,
+      "crude_oil_MJ": 80.0,
+      "water_consumed": 0.06
+    },
+    "nylon": {
+      "CO2_fossil": 6.8,
+      "SO2": 2.5e-3,
+      "NMVOC": 6.0e-3,
+      "N2O": 0.03,
+      "PM2.5": 1.0e-4,
+      "NH3": 1.0e-3,
+      "crude_oil_MJ": 95.0,
+      "water_consumed": 0.07
+    },
+    "leather": {
+      "CO2_fossil": 17.0,
+      "CH4_biogenic": 0.45,
+      "SO2": 5.0e-3,
+      "NOx": 3.0e-3,
+      "NH3": 0.012,
+      "Cr_VI_water": 2.0e-6,
+      "water_consumed": 16.6
+    },
+    "rubber_synthetic": {
+      "CO2_fossil": 3.2,
+      "SO2": 1.5e-3,
+      "NMVOC": 5.0e-3,
+      "NOx": 1.5e-3,
+      "PM2.5": 8.0e-5,
+      "NH3": 2.0e-5,
+      "crude_oil_MJ": 50.0,
+      "water_consumed": 0.03
+    },
+    "pp": {
+      "CO2_fossil": 1.98,
+      "SO2": 1.0e-3,
+      "NMVOC": 3.0e-3,
+      "NOx": 1.5e-3,
+      "PM2.5": 8.0e-5,
+      "NH3": 2.0e-5,
+      "crude_oil_MJ": 73.0,
+      "water_consumed": 0.015
+    },
+    "hdpe": {
+      "CO2_fossil": 1.8,
+      "SO2": 8.0e-4,
+      "NMVOC": 2.5e-3,
+      "NOx": 1.5e-3,
+      "PM2.5": 8.0e-5,
+      "NH3": 2.0e-5,
+      "crude_oil_MJ": 76.0,
+      "water_consumed": 0.012
+    },
+    "abs": {
+      "CO2_fossil": 3.5,
+      "SO2": 2.0e-3,
+      "NMVOC": 6.0e-3,
+      "NOx": 1.5e-3,
+      "PM2.5": 8.0e-5,
+      "NH3": 2.0e-5,
+      "crude_oil_MJ": 90.0,
+      "water_consumed": 0.025
+    },
+    "pcb": {
+      "CO2_fossil": 12.0,
+      "SO2": 0.015,
+      "NOx": 5.0e-3,
+      "PM2.5": 5.0e-4,
+      "Cu_ore": 30.0,
+      "Co_ore": 0.5,
+      "Pb_water": 1.0e-6,
+      "hard_coal_MJ": 60.0,
+      "water_consumed": 0.13
+    },
+    "lithium_battery": {
+      "CO2_fossil": 12.5,
+      "SO2": 0.02,
+      "NOx": 4.0e-3,
+      "HF": 1.0e-4,
+      "Li_ore": 0.3,
+      "Co_ore": 0.8,
+      "Cu_ore": 15.0,
+      "hard_coal_MJ": 85.0,
+      "water_consumed": 0.2
+    },
+    "silicon_wafer": {
+      "CO2_fossil": 45.0,
+      "SO2": 0.05,
+      "NOx": 0.01,
+      "HF": 5.0e-3,
+      "NMVOC": 0.02,
+      "hard_coal_MJ": 250.0,
+      "water_consumed": 1.5
+    },
+    "timber_hardwood": {
+      "CO2_fossil": 0.46,
+      "CO2_land_use_change": -1.5,
+      "NOx": 5.0e-4,
+      "PM2.5": 5.0e-5,
+      "NMVOC": 1.0e-3,
+      "land_occupation_forest": 4.0,
+      "water_consumed": 0.005
+    },
+    "timber_softwood": {
+      "CO2_fossil": 0.31,
+      "CO2_land_use_change": -1.65,
+      "NOx": 5.0e-4,
+      "PM2.5": 4.0e-5,
+      "NMVOC": 1.2e-3,
+      "land_occupation_forest": 5.0,
+      "water_consumed": 0.004
+    },
+    "mdf": {
+      "CO2_fossil": 0.72,
+      "CO2_land_use_change": -0.8,
+      "SO2": 5.0e-4,
+      "NOx": 5.0e-4,
+      "NMVOC": 3.0e-3,
+      "PM2.5": 5.0e-5,
+      "water_consumed": 0.008
+    },
+    "plywood": {
+      "CO2_fossil": 0.65,
+      "CO2_land_use_change": -1.2,
+      "SO2": 4.0e-4,
+      "NOx": 5.0e-4,
+      "NMVOC": 2.0e-3,
+      "PM2.5": 4.0e-5,
+      "water_consumed": 0.006
+    },
+    "paper_virgin": {
+      "CO2_fossil": 0.94,
+      "SO2": 1.0e-3,
+      "NOx": 2.0e-3,
+      "PM2.5": 1.5e-4,
+      "NMVOC": 5.0e-4,
+      "NH3": 1.0e-4,
+      "N_total_water": 3.0e-4,
+      "PO4": 5.0e-4,
+      "land_occupation_forest": 2.5,
+      "water_consumed": 0.025
+    },
+    "cardboard": {
+      "CO2_fossil": 0.75,
+      "SO2": 8.0e-4,
+      "NOx": 1.5e-3,
+      "PM2.5": 1.0e-4,
+      "NMVOC": 4.0e-4,
+      "NH3": 8.0e-5,
+      "N_total_water": 2.0e-4,
+      "PO4": 3.0e-4,
+      "water_consumed": 0.02
+    },
+    "carbon_fiber": {
+      "CO2_fossil": 20.0,
+      "SO2": 0.012,
+      "NOx": 4.0e-3,
+      "PM2.5": 2.0e-4,
+      "NH3": 5.0e-5,
+      "HF": 3.0e-5,
+      "NMVOC": 0.015,
+      "crude_oil_MJ": 180.0,
+      "water_consumed": 0.1
+    },
+    "foam": {
+      "CO2_fossil": 3.8,
+      "SO2": 1.0e-3,
+      "NOx": 1.2e-3,
+      "PM2.5": 6.0e-5,
+      "NMVOC": 0.01,
+      "crude_oil_MJ": 70.0,
+      "water_consumed": 0.015
+    },
+    "ceramic": {
+      "CO2_fossil": 0.7,
+      "SO2": 2.0e-3,
+      "NOx": 3.0e-3,
+      "PM2.5": 3.0e-4,
+      "PM10": 5.0e-4,
+      "HF": 1.0e-4,
+      "NH3": 5.0e-5,
+      "natural_gas_MJ": 7.0,
+      "water_consumed": 0.01
+    },
+    "denim": {
+      "CO2_fossil": 7.5,
+      "N2O": 0.01,
+      "PO4": 2.5e-3,
+      "NO3_water": 0.012,
+      "NH3": 5.0e-3,
+      "PM2.5": 8.0e-5,
+      "SO2": 1.5e-3,
+      "NMVOC": 2.0e-3,
+      "land_occupation_annual_crop": 5.0,
+      "water_consumed": 8.0
+    },
+    "refrigerant_hcfc22": {
+      "HCFC_22": 1.0,
+      "CO2_fossil": 0.5
+    },
+    "titanium": {
+      "CO2_fossil": 25.0,
+      "SO2": 0.015,
+      "NOx": 5.0e-3,
+      "PM2.5": 3.0e-4,
+      "NMVOC": 2.0e-3,
+      "crude_oil_MJ": 300.0,
+      "water_consumed": 0.2
+    },
+    "bamboo": {
+      "CO2_fossil": 0.35,
+      "N2O": 1.0e-4,
+      "NH3": 2.0e-4,
+      "NOx": 5.0e-5,
+      "water_consumed": 0.5,
+      "land_occupation_annual_crop": 1.2
+    },
+    "pu_synthetic": {
+      "CO2_fossil": 4.2,
+      "SO2": 1.5e-3,
+      "NOx": 1.0e-3,
+      "PM2.5": 5.0e-5,
+      "NMVOC": 0.012,
+      "crude_oil_MJ": 75.0,
+      "water_consumed": 0.03
+    },
+    "foam_eva": {
+      "CO2_fossil": 3.5,
+      "SO2": 1.0e-3,
+      "NOx": 1.0e-3,
+      "PM2.5": 5.0e-5,
+      "NMVOC": 0.008,
+      "crude_oil_MJ": 65.0,
+      "water_consumed": 0.012
+    },
+    "down_feather": {
+      "CO2_fossil": 20.0,
+      "CH4_biogenic": 5.0,
+      "N2O": 0.05,
+      "NH3": 0.1,
+      "PM2.5": 1.0e-4,
+      "water_consumed": 5.0,
+      "land_occupation_annual_crop": 3.0
+    },
+    "hemp": {
+      "CO2_fossil": 1.5,
+      "N2O": 5.0e-4,
+      "NH3": 1.0e-3,
+      "NOx": 2.0e-4,
+      "water_consumed": 1.5,
+      "land_occupation_annual_crop": 2.0
+    },
+    "tencel": {
+      "CO2_fossil": 1.2,
+      "SO2": 2.0e-4,
+      "NOx": 3.0e-4,
+      "PM2.5": 1.0e-5,
+      "NMVOC": 5.0e-4,
+      "water_consumed": 0.3,
+      "land_occupation_forest": 2.5
+    },
+    "cork": {
+      "CO2_fossil": 0.3,
+      "NOx": 3.0e-5,
+      "PM2.5": 5.0e-6,
+      "water_consumed": 0.1,
+      "land_occupation_forest": 0.8
+    },
+    "pet": {
+      "CO2_fossil": 2.15,
+      "SO2": 1.2e-3,
+      "NMVOC": 4.0e-3,
+      "NOx": 1.8e-3,
+      "PM2.5": 9.0e-5,
+      "NH3": 3.0e-5,
+      "crude_oil_MJ": 77.0,
+      "water_consumed": 0.02
+    },
+    "pvc": {
+      "CO2_fossil": 1.9,
+      "SO2": 1.0e-3,
+      "NMVOC": 2.5e-3,
+      "NOx": 1.2e-3,
+      "PM2.5": 7.0e-5,
+      "HCl": 3.0e-4,
+      "crude_oil_MJ": 46.0,
+      "natural_gas_MJ": 12.0,
+      "water_consumed": 0.018
+    },
+    "ldpe": {
+      "CO2_fossil": 2.08,
+      "SO2": 9.0e-4,
+      "NMVOC": 3.5e-3,
+      "NOx": 1.5e-3,
+      "PM2.5": 8.0e-5,
+      "NH3": 2.0e-5,
+      "crude_oil_MJ": 78.0,
+      "water_consumed": 0.014
+    },
+    "polycarbonate": {
+      "CO2_fossil": 7.2,
+      "SO2": 3.0e-3,
+      "NMVOC": 8.0e-3,
+      "NOx": 2.5e-3,
+      "PM2.5": 1.5e-4,
+      "NH3": 5.0e-5,
+      "crude_oil_MJ": 110.0,
+      "water_consumed": 0.04
+    },
+    "pla_bioplastic": {
+      "CO2_fossil": 1.8,
+      "CO2_land_use_change": -0.5,
+      "SO2": 5.0e-4,
+      "NOx": 8.0e-4,
+      "PM2.5": 4.0e-5,
+      "N2O": 2.0e-3,
+      "NH3": 1.5e-3,
+      "land_occupation_annual_crop": 2.5,
+      "water_consumed": 0.05
+    },
+    "recycled_polyester": {
+      "CO2_fossil": 2.1,
+      "SO2": 8.0e-4,
+      "NMVOC": 3.0e-3,
+      "NOx": 1.0e-3,
+      "PM2.5": 5.0e-5,
+      "NH3": 1.0e-4,
+      "crude_oil_MJ": 30.0,
+      "water_consumed": 0.025
+    },
+    "wool": {
+      "CO2_fossil": 5.5,
+      "CH4_biogenic": 5.8,
+      "N2O": 0.025,
+      "NH3": 0.06,
+      "SO2": 2.0e-3,
+      "NOx": 1.5e-3,
+      "PM2.5": 1.5e-4,
+      "PO4": 2.0e-3,
+      "land_occupation_annual_crop": 55.0,
+      "water_consumed": 6.0
+    },
+    "silk": {
+      "CO2_fossil": 10.0,
+      "N2O": 5.0e-3,
+      "NH3": 0.02,
+      "SO2": 1.5e-3,
+      "NOx": 1.0e-3,
+      "PM2.5": 8.0e-5,
+      "water_consumed": 1.5,
+      "land_occupation_annual_crop": 8.0
+    },
+    "linen": {
+      "CO2_fossil": 3.5,
+      "N2O": 6.0e-3,
+      "PO4": 1.5e-3,
+      "NH3": 3.0e-3,
+      "SO2": 5.0e-4,
+      "NOx": 6.0e-4,
+      "PM2.5": 5.0e-5,
+      "land_occupation_annual_crop": 4.5,
+      "water_consumed": 2.0
+    },
+    "organic_cotton": {
+      "CO2_fossil": 4.2,
+      "N2O": 5.0e-3,
+      "PO4": 1.5e-3,
+      "NO3_water": 6.0e-3,
+      "PM2.5": 8.0e-5,
+      "NH3": 3.0e-3,
+      "SO2": 6.0e-4,
+      "NMVOC": 2.0e-4,
+      "land_occupation_annual_crop": 7.0,
+      "water_consumed": 6.5
+    },
+    "acrylic": {
+      "CO2_fossil": 5.0,
+      "SO2": 2.0e-3,
+      "NMVOC": 7.0e-3,
+      "NOx": 2.0e-3,
+      "PM2.5": 1.0e-4,
+      "NH3": 2.0e-4,
+      "crude_oil_MJ": 85.0,
+      "water_consumed": 0.05
+    },
+    "spandex": {
+      "CO2_fossil": 8.5,
+      "SO2": 3.0e-3,
+      "NMVOC": 0.01,
+      "NOx": 3.0e-3,
+      "PM2.5": 1.2e-4,
+      "NH3": 3.0e-4,
+      "crude_oil_MJ": 120.0,
+      "water_consumed": 0.08
+    },
+    "viscose": {
+      "CO2_fossil": 2.8,
+      "SO2": 1.5e-3,
+      "NMVOC": 2.0e-3,
+      "NOx": 8.0e-4,
+      "PM2.5": 5.0e-5,
+      "NH3": 1.0e-4,
+      "CS2_air": 0.02,
+      "land_occupation_forest": 3.5,
+      "water_consumed": 0.4
+    },
+    "jute": {
+      "CO2_fossil": 0.6,
+      "N2O": 3.0e-4,
+      "NH3": 5.0e-4,
+      "NOx": 1.0e-4,
+      "PM2.5": 3.0e-5,
+      "water_consumed": 2.0,
+      "land_occupation_annual_crop": 3.0
+    },
+    "stainless_steel": {
+      "CO2_fossil": 6.15,
+      "SO2": 0.012,
+      "NOx": 4.0e-3,
+      "PM2.5": 5.0e-4,
+      "PM10": 1.0e-3,
+      "CO": 0.02,
+      "Cr_ore": 0.18,
+      "Ni_ore": 0.08,
+      "Fe_ore": 1.2,
+      "hard_coal_MJ": 45.0,
+      "water_consumed": 0.035
+    },
+    "zinc": {
+      "CO2_fossil": 3.1,
+      "SO2": 0.025,
+      "NOx": 2.0e-3,
+      "PM2.5": 3.0e-4,
+      "Zn_ore": 5.0,
+      "hard_coal_MJ": 25.0,
+      "water_consumed": 0.04
+    },
+    "tin": {
+      "CO2_fossil": 16.0,
+      "SO2": 0.03,
+      "NOx": 5.0e-3,
+      "PM2.5": 4.0e-4,
+      "Sn_ore": 2.5,
+      "hard_coal_MJ": 100.0,
+      "water_consumed": 0.08
+    },
+    "nickel": {
+      "CO2_fossil": 12.0,
+      "SO2": 0.06,
+      "NOx": 5.0e-3,
+      "PM2.5": 5.0e-4,
+      "Ni_ore": 35.0,
+      "hard_coal_MJ": 80.0,
+      "water_consumed": 0.07
+    },
+    "aluminum_recycled": {
+      "CO2_fossil": 0.7,
+      "SO2": 2.0e-3,
+      "NOx": 5.0e-4,
+      "PM2.5": 1.0e-4,
+      "HF": 2.0e-5,
+      "hard_coal_MJ": 6.0,
+      "water_consumed": 0.01
+    },
+    "gold": {
+      "CO2_fossil": 17500.0,
+      "SO2": 25.0,
+      "NOx": 8.0,
+      "PM2.5": 1.0,
+      "Hg_air": 5.0e-5,
+      "Au_ore": 200000.0,
+      "hard_coal_MJ": 120000.0,
+      "water_consumed": 260.0
+    },
+    "silver": {
+      "CO2_fossil": 104.0,
+      "SO2": 0.2,
+      "NOx": 0.05,
+      "PM2.5": 8.0e-3,
+      "Ag_ore": 600.0,
+      "hard_coal_MJ": 700.0,
+      "water_consumed": 1.5
+    },
+    "brass": {
+      "CO2_fossil": 3.8,
+      "SO2": 0.02,
+      "NOx": 2.0e-3,
+      "PM2.5": 3.0e-4,
+      "Cu_ore": 65.0,
+      "Zn_ore": 2.5,
+      "hard_coal_MJ": 28.0,
+      "water_consumed": 0.04
+    },
+    "concrete": {
+      "CO2_fossil": 0.13,
+      "SO2": 1.5e-4,
+      "NOx": 3.0e-4,
+      "PM2.5": 5.0e-5,
+      "PM10": 1.5e-4,
+      "natural_gas_MJ": 0.25,
+      "water_consumed": 0.015
+    },
+    "cement": {
+      "CO2_fossil": 0.93,
+      "SO2": 5.0e-4,
+      "NOx": 2.5e-3,
+      "PM2.5": 3.0e-4,
+      "PM10": 6.0e-4,
+      "hard_coal_MJ": 3.5,
+      "water_consumed": 0.005
+    },
+    "brick": {
+      "CO2_fossil": 0.22,
+      "SO2": 3.0e-4,
+      "NOx": 4.0e-4,
+      "PM2.5": 8.0e-5,
+      "PM10": 2.0e-4,
+      "natural_gas_MJ": 2.5,
+      "water_consumed": 0.003
+    },
+    "mineral_wool": {
+      "CO2_fossil": 1.4,
+      "SO2": 1.0e-3,
+      "NOx": 1.5e-3,
+      "PM2.5": 2.0e-4,
+      "PM10": 4.0e-4,
+      "NH3": 5.0e-5,
+      "natural_gas_MJ": 15.0,
+      "water_consumed": 0.012
+    },
+    "gypsum": {
+      "CO2_fossil": 0.08,
+      "SO2": 1.0e-4,
+      "NOx": 1.5e-4,
+      "PM2.5": 3.0e-5,
+      "natural_gas_MJ": 0.8,
+      "water_consumed": 0.002
+    },
+    "rubber_natural": {
+      "CO2_fossil": 2.3,
+      "CH4_biogenic": 0.05,
+      "N2O": 5.0e-4,
+      "SO2": 5.0e-4,
+      "NOx": 3.0e-4,
+      "PM2.5": 4.0e-5,
+      "NH3": 5.0e-4,
+      "land_occupation_annual_crop": 4.0,
+      "water_consumed": 1.2
+    },
+    "paper_recycled": {
+      "CO2_fossil": 0.45,
+      "SO2": 4.0e-4,
+      "NOx": 8.0e-4,
+      "PM2.5": 6.0e-5,
+      "NMVOC": 2.0e-4,
+      "NH3": 4.0e-5,
+      "N_total_water": 1.5e-4,
+      "PO4": 2.0e-4,
+      "water_consumed": 0.015
+    },
+    "epoxy": {
+      "CO2_fossil": 6.5,
+      "SO2": 3.0e-3,
+      "NMVOC": 0.012,
+      "NOx": 2.5e-3,
+      "PM2.5": 1.5e-4,
+      "NH3": 5.0e-5,
+      "crude_oil_MJ": 100.0,
+      "water_consumed": 0.035
+    },
+    "fiberglass": {
+      "CO2_fossil": 2.5,
+      "SO2": 1.5e-3,
+      "NOx": 2.0e-3,
+      "PM2.5": 2.5e-4,
+      "PM10": 5.0e-4,
+      "natural_gas_MJ": 25.0,
+      "water_consumed": 0.02
+    },
+    "steel_virgin_eu": {
+      "CO2_fossil": 1.6,
+      "SO2": 5.0e-3,
+      "NOx": 2.5e-3,
+      "PM2.5": 3.0e-4,
+      "PM10": 6.0e-4,
+      "CO": 0.02,
+      "Fe_ore": 1.5,
+      "hard_coal_MJ": 14.0,
+      "natural_gas_MJ": 2.0,
+      "water_consumed": 0.022
+    },
+    "steel_virgin_us": {
+      "CO2_fossil": 1.78,
+      "SO2": 7.0e-3,
+      "NOx": 2.8e-3,
+      "PM2.5": 3.5e-4,
+      "PM10": 7.0e-4,
+      "CO": 0.022,
+      "Fe_ore": 1.5,
+      "hard_coal_MJ": 16.0,
+      "natural_gas_MJ": 1.5,
+      "water_consumed": 0.024
+    },
+    "aluminum_primary_eu": {
+      "CO2_fossil": 6.8,
+      "SO2": 0.025,
+      "NOx": 4.0e-3,
+      "PM2.5": 5.0e-4,
+      "HF": 1.5e-4,
+      "Al_ore": 5.0,
+      "hard_coal_MJ": 50.0,
+      "crude_oil_MJ": 10.0,
+      "water_consumed": 0.055
+    },
+    "aluminum_primary_us": {
+      "CO2_fossil": 8.9,
+      "SO2": 0.035,
+      "NOx": 5.5e-3,
+      "PM2.5": 6.5e-4,
+      "HF": 2.0e-4,
+      "Al_ore": 5.0,
+      "hard_coal_MJ": 90.0,
+      "crude_oil_MJ": 12.0,
+      "water_consumed": 0.07
+    }
+  },
+  "transport": {
+    "_unit": "kg substance per tonne-km",
+    "sea_freight_container": {
+      "CO2_fossil": 0.016,
+      "SO2": 1.2e-4,
+      "NOx": 2.9e-4,
+      "PM2.5": 6.0e-6,
+      "PM10": 1.0e-5,
+      "NMVOC": 5.0e-6,
+      "crude_oil_MJ": 0.22
+    },
+    "road_freight_articulated": {
+      "CO2_fossil": 0.052,
+      "NOx": 4.0e-4,
+      "PM2.5": 1.0e-5,
+      "PM10": 2.0e-5,
+      "NMVOC": 8.0e-6,
+      "CO": 3.0e-5,
+      "crude_oil_MJ": 0.72
+    },
+    "air_freight": {
+      "CO2_fossil": 0.602,
+      "NOx": 2.5e-3,
+      "PM2.5": 3.0e-5,
+      "NMVOC": 4.0e-5,
+      "crude_oil_MJ": 8.36
+    },
+    "rail_freight": {
+      "CO2_fossil": 0.022,
+      "NOx": 1.0e-4,
+      "PM2.5": 3.0e-6,
+      "hard_coal_MJ": 0.3
+    }
+  },
+  "end_of_life": {
+    "_unit": "kg substance per kg material treated",
+    "landfill_generic": {
+      "CO2_fossil": 0.05,
+      "CH4_biogenic": 0.02,
+      "N_total_water": 5.0e-5,
+      "water_consumed": 0.001
+    },
+    "incineration_generic": {
+      "CO2_fossil": 1.2,
+      "SO2": 5.0e-4,
+      "NOx": 8.0e-4,
+      "PM2.5": 3.0e-5,
+      "HCl": 2.0e-4
+    },
+    "recycling_credit_metals": {
+      "CO2_fossil": -1.5,
+      "SO2": -5.0e-3,
+      "NOx": -2.0e-3,
+      "Fe_ore": -1.0,
+      "Cu_ore": -50.0,
+      "hard_coal_MJ": -15.0,
+      "water_consumed": -0.02
+    },
+    "recycling_credit_plastics": {
+      "CO2_fossil": -1.0,
+      "crude_oil_MJ": -40.0,
+      "NMVOC": -2.0e-3,
+      "water_consumed": -0.01
+    },
+    "recycling_credit_textiles": {
+      "CO2_fossil": -2.0,
+      "water_consumed": -3.0,
+      "PO4": -1.0e-3
+    }
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "metadata": {
+    "description": "Product lifecycle templates defining use-phase energy consumption and end-of-life treatment for PEF lifecycle completeness.",
+    "sources": [
+      "EU PEF pilot study results (2013-2018)",
+      "IEC 62623 (ICT equipment energy use)",
+      "EU Ecodesign preparatory studies",
+      "EU waste statistics (Eurostat 2023)",
+      "WRAP UK product lifecycle data"
+    ]
+  },
+  "templates": {
+    "smartphone": {
+      "use_phase": { "annual_energy_kwh": 4.5, "lifespan_years": 3, "standby_share": 0.60 },
+      "end_of_life": { "recycling_rate": 0.15, "incineration_rate": 0.10, "landfill_rate": 0.75, "recycling_credit_factor": 0.30, "hazardous_substances": ["lithium_battery", "pcb"] }
+    },
+    "laptop": {
+      "use_phase": { "annual_energy_kwh": 40, "lifespan_years": 5, "standby_share": 0.30 },
+      "end_of_life": { "recycling_rate": 0.20, "incineration_rate": 0.10, "landfill_rate": 0.70, "recycling_credit_factor": 0.35, "hazardous_substances": ["lithium_battery", "pcb"] }
+    },
+    "tablet": {
+      "use_phase": { "annual_energy_kwh": 12, "lifespan_years": 4, "standby_share": 0.50 },
+      "end_of_life": { "recycling_rate": 0.15, "incineration_rate": 0.10, "landfill_rate": 0.75, "recycling_credit_factor": 0.30, "hazardous_substances": ["lithium_battery"] }
+    },
+    "television": {
+      "use_phase": { "annual_energy_kwh": 100, "lifespan_years": 8, "standby_share": 0.15 },
+      "end_of_life": { "recycling_rate": 0.25, "incineration_rate": 0.10, "landfill_rate": 0.65, "recycling_credit_factor": 0.30, "hazardous_substances": ["pcb"] }
+    },
+    "monitor": {
+      "use_phase": { "annual_energy_kwh": 60, "lifespan_years": 7, "standby_share": 0.20 },
+      "end_of_life": { "recycling_rate": 0.25, "incineration_rate": 0.10, "landfill_rate": 0.65, "recycling_credit_factor": 0.30, "hazardous_substances": ["pcb"] }
+    },
+    "headphones": {
+      "use_phase": { "annual_energy_kwh": 2, "lifespan_years": 3, "standby_share": 0.40 },
+      "end_of_life": { "recycling_rate": 0.10, "incineration_rate": 0.15, "landfill_rate": 0.75, "recycling_credit_factor": 0.25, "hazardous_substances": ["lithium_battery"] }
+    },
+    "smartwatch": {
+      "use_phase": { "annual_energy_kwh": 2.5, "lifespan_years": 3, "standby_share": 0.50 },
+      "end_of_life": { "recycling_rate": 0.10, "incineration_rate": 0.15, "landfill_rate": 0.75, "recycling_credit_factor": 0.25, "hazardous_substances": ["lithium_battery"] }
+    },
+    "washing_machine": {
+      "use_phase": { "annual_energy_kwh": 150, "lifespan_years": 12, "standby_share": 0.05 },
+      "end_of_life": { "recycling_rate": 0.85, "incineration_rate": 0.05, "landfill_rate": 0.10, "recycling_credit_factor": 0.50, "hazardous_substances": [] }
+    },
+    "refrigerator": {
+      "use_phase": { "annual_energy_kwh": 350, "lifespan_years": 15, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.80, "incineration_rate": 0.05, "landfill_rate": 0.15, "recycling_credit_factor": 0.50, "hazardous_substances": ["refrigerant_hcfc22"] }
+    },
+    "vacuum_cleaner": {
+      "use_phase": { "annual_energy_kwh": 30, "lifespan_years": 6, "standby_share": 0.05 },
+      "end_of_life": { "recycling_rate": 0.30, "incineration_rate": 0.15, "landfill_rate": 0.55, "recycling_credit_factor": 0.30, "hazardous_substances": [] }
+    },
+    "tshirt": {
+      "use_phase": { "annual_energy_kwh": 3.5, "lifespan_years": 2, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.12, "incineration_rate": 0.25, "landfill_rate": 0.63, "recycling_credit_factor": 0.15, "hazardous_substances": [] }
+    },
+    "jeans": {
+      "use_phase": { "annual_energy_kwh": 4.0, "lifespan_years": 3, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.12, "incineration_rate": 0.25, "landfill_rate": 0.63, "recycling_credit_factor": 0.15, "hazardous_substances": [] }
+    },
+    "jacket": {
+      "use_phase": { "annual_energy_kwh": 2.0, "lifespan_years": 4, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.10, "incineration_rate": 0.25, "landfill_rate": 0.65, "recycling_credit_factor": 0.10, "hazardous_substances": [] }
+    },
+    "leather_jacket": {
+      "use_phase": { "annual_energy_kwh": 1.0, "lifespan_years": 10, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.05, "incineration_rate": 0.20, "landfill_rate": 0.75, "recycling_credit_factor": 0.05, "hazardous_substances": [] }
+    },
+    "dress": {
+      "use_phase": { "annual_energy_kwh": 3.0, "lifespan_years": 2, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.10, "incineration_rate": 0.25, "landfill_rate": 0.65, "recycling_credit_factor": 0.12, "hazardous_substances": [] }
+    },
+    "hoodie": {
+      "use_phase": { "annual_energy_kwh": 3.5, "lifespan_years": 3, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.10, "incineration_rate": 0.25, "landfill_rate": 0.65, "recycling_credit_factor": 0.12, "hazardous_substances": [] }
+    },
+    "sneakers": {
+      "use_phase": { "annual_energy_kwh": 0.5, "lifespan_years": 2, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.05, "incineration_rate": 0.20, "landfill_rate": 0.75, "recycling_credit_factor": 0.10, "hazardous_substances": [] }
+    },
+    "chair": {
+      "use_phase": { "annual_energy_kwh": 0.0, "lifespan_years": 10, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.40, "incineration_rate": 0.20, "landfill_rate": 0.40, "recycling_credit_factor": 0.30, "hazardous_substances": [] }
+    },
+    "desk": {
+      "use_phase": { "annual_energy_kwh": 0.0, "lifespan_years": 15, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.45, "incineration_rate": 0.20, "landfill_rate": 0.35, "recycling_credit_factor": 0.35, "hazardous_substances": [] }
+    },
+    "sofa": {
+      "use_phase": { "annual_energy_kwh": 0.0, "lifespan_years": 12, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.20, "incineration_rate": 0.30, "landfill_rate": 0.50, "recycling_credit_factor": 0.15, "hazardous_substances": [] }
+    },
+    "bench": {
+      "use_phase": { "annual_energy_kwh": 0.0, "lifespan_years": 15, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.40, "incineration_rate": 0.15, "landfill_rate": 0.45, "recycling_credit_factor": 0.30, "hazardous_substances": [] }
+    },
+    "bicycle": {
+      "use_phase": { "annual_energy_kwh": 0.0, "lifespan_years": 10, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.70, "incineration_rate": 0.05, "landfill_rate": 0.25, "recycling_credit_factor": 0.50, "hazardous_substances": [] }
+    },
+    "backpack": {
+      "use_phase": { "annual_energy_kwh": 0.5, "lifespan_years": 5, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.08, "incineration_rate": 0.25, "landfill_rate": 0.67, "recycling_credit_factor": 0.10, "hazardous_substances": [] }
+    },
+    "cookware": {
+      "use_phase": { "annual_energy_kwh": 0.0, "lifespan_years": 10, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.60, "incineration_rate": 0.05, "landfill_rate": 0.35, "recycling_credit_factor": 0.45, "hazardous_substances": [] }
+    },
+    "book": {
+      "use_phase": { "annual_energy_kwh": 0.0, "lifespan_years": 50, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.65, "incineration_rate": 0.15, "landfill_rate": 0.20, "recycling_credit_factor": 0.40, "hazardous_substances": [] }
+    },
+    "toy": {
+      "use_phase": { "annual_energy_kwh": 1.0, "lifespan_years": 3, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.10, "incineration_rate": 0.20, "landfill_rate": 0.70, "recycling_credit_factor": 0.10, "hazardous_substances": [] }
+    },
+    "skincare": {
+      "use_phase": { "annual_energy_kwh": 0.0, "lifespan_years": 1, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.25, "incineration_rate": 0.20, "landfill_rate": 0.55, "recycling_credit_factor": 0.20, "hazardous_substances": [] }
+    },
+    "cosmetics": {
+      "use_phase": { "annual_energy_kwh": 0.0, "lifespan_years": 1, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.20, "incineration_rate": 0.20, "landfill_rate": 0.60, "recycling_credit_factor": 0.15, "hazardous_substances": [] }
+    },
+    "sunglasses": {
+      "use_phase": { "annual_energy_kwh": 0.0, "lifespan_years": 3, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.05, "incineration_rate": 0.20, "landfill_rate": 0.75, "recycling_credit_factor": 0.05, "hazardous_substances": [] }
+    },
+    "printer": {
+      "use_phase": { "annual_energy_kwh": 25, "lifespan_years": 5, "standby_share": 0.60 },
+      "end_of_life": { "recycling_rate": 0.25, "incineration_rate": 0.10, "landfill_rate": 0.65, "recycling_credit_factor": 0.30, "hazardous_substances": ["pcb"] }
+    },
+    "charger": {
+      "use_phase": { "annual_energy_kwh": 0.5, "lifespan_years": 3, "standby_share": 0.80 },
+      "end_of_life": { "recycling_rate": 0.15, "incineration_rate": 0.15, "landfill_rate": 0.70, "recycling_credit_factor": 0.25, "hazardous_substances": ["pcb"] }
+    },
+    "cable_adapter": {
+      "use_phase": { "annual_energy_kwh": 0.0, "lifespan_years": 3, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.10, "incineration_rate": 0.15, "landfill_rate": 0.75, "recycling_credit_factor": 0.20, "hazardous_substances": [] }
+    },
+    "phone_case": {
+      "use_phase": { "annual_energy_kwh": 0.0, "lifespan_years": 2, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.05, "incineration_rate": 0.20, "landfill_rate": 0.75, "recycling_credit_factor": 0.05, "hazardous_substances": [] }
+    },
+    "power_bank": {
+      "use_phase": { "annual_energy_kwh": 3.0, "lifespan_years": 3, "standby_share": 0.50 },
+      "end_of_life": { "recycling_rate": 0.10, "incineration_rate": 0.10, "landfill_rate": 0.80, "recycling_credit_factor": 0.25, "hazardous_substances": ["lithium_battery"] }
+    },
+    "speaker": {
+      "use_phase": { "annual_energy_kwh": 8, "lifespan_years": 5, "standby_share": 0.30 },
+      "end_of_life": { "recycling_rate": 0.15, "incineration_rate": 0.15, "landfill_rate": 0.70, "recycling_credit_factor": 0.25, "hazardous_substances": ["lithium_battery"] }
+    },
+    "keyboard_mouse": {
+      "use_phase": { "annual_energy_kwh": 1.5, "lifespan_years": 4, "standby_share": 0.40 },
+      "end_of_life": { "recycling_rate": 0.15, "incineration_rate": 0.15, "landfill_rate": 0.70, "recycling_credit_factor": 0.20, "hazardous_substances": ["lithium_battery"] }
+    },
+    "small_appliance": {
+      "use_phase": { "annual_energy_kwh": 40, "lifespan_years": 5, "standby_share": 0.10 },
+      "end_of_life": { "recycling_rate": 0.30, "incineration_rate": 0.15, "landfill_rate": 0.55, "recycling_credit_factor": 0.30, "hazardous_substances": [] }
+    },
+    "default": {
+      "use_phase": { "annual_energy_kwh": 5, "lifespan_years": 5, "standby_share": 0.0 },
+      "end_of_life": { "recycling_rate": 0.20, "incineration_rate": 0.20, "landfill_rate": 0.60, "recycling_credit_factor": 0.20, "hazardous_substances": [] }
+    }
+  }
+}

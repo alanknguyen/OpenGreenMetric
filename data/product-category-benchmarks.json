@@ -1,0 +1,655 @@
+{
+  "metadata": {
+    "description": "Product category environmental benchmarks for validation and scoring",
+    "sources": ["EPA USEEIO v2.0", "EU PEF pilot studies", "Published LCA literature", "Apple/Samsung/Dell Product Environmental Reports", "WRAP UK textile data"],
+    "units": {
+      "co2eKg": "kg CO2 equivalent per product unit",
+      "waterLiters": "liters of water per product unit",
+      "energyKwh": "kWh of energy per product unit"
+    },
+    "materialComposition_note": "Mass percentages derived from published teardown data and PEFCR product-group studies. Sums to ~100%.",
+    "weightModel_note": "Linear model: weight = baseKg + priceCoeffKgPerDollar * (price - medianPrice). baseKg is the median-price weight."
+  },
+  "categories": {
+    "smartphone": {
+      "naicsCodes": ["334200", "334400"],
+      "typicalWeight": { "min": 0.15, "max": 0.25, "unit": "kg" },
+      "co2eKg": { "min": 40, "max": 120, "median": 70, "unit": "kg CO2e" },
+      "waterLiters": { "min": 8000, "max": 18000, "median": 12760 },
+      "energyKwh": { "min": 150, "max": 350, "median": 210 },
+      "typicalPrice": { "min": 150, "max": 1500, "median": 800, "currency": "USD" },
+      "typicalLifespan": { "years": 3 },
+      "mainMaterials": ["aluminum", "glass", "lithium_battery", "pcb", "silicon_wafer"],
+      "materialComposition": {
+        "lithium_battery": 33,
+        "aluminum": 24,
+        "glass": 22,
+        "pcb": 12,
+        "copper": 5,
+        "steel_virgin": 3,
+        "silicon_wafer": 1
+      },
+      "weightModel": { "baseKg": 0.19, "priceCoeffKgPerDollar": 0.000030 },
+      "keywords": ["smartphone", "iphone", "samsung galaxy", "pixel", "android phone", "oneplus", "galaxy s", "galaxy z", "iphone pro"],
+      "negativeKeywords": ["charger", "cable", "case", "stand", "holder", "mount", "screen protector", "adapter", "dock", "for iphone", "for samsung", "compatible with", "fits", "tempered glass for"]
+    },
+    "laptop": {
+      "naicsCodes": ["334100"],
+      "typicalWeight": { "min": 1.0, "max": 3.0, "unit": "kg" },
+      "co2eKg": { "min": 200, "max": 600, "median": 350 },
+      "waterLiters": { "min": 30000, "max": 70000, "median": 50000 },
+      "energyKwh": { "min": 800, "max": 2000, "median": 1200 },
+      "typicalPrice": { "min": 400, "max": 3000, "median": 1200, "currency": "USD" },
+      "typicalLifespan": { "years": 5 },
+      "mainMaterials": ["aluminum", "steel_virgin", "lithium_battery", "pcb", "silicon_wafer", "abs"],
+      "materialComposition": {
+        "aluminum": 30,
+        "lithium_battery": 22,
+        "pcb": 15,
+        "abs": 12,
+        "steel_virgin": 10,
+        "glass": 5,
+        "copper": 4,
+        "silicon_wafer": 2
+      },
+      "weightModel": { "baseKg": 2.0, "priceCoeffKgPerDollar": 0.000769 },
+      "keywords": ["laptop", "notebook", "macbook", "chromebook", "thinkpad", "dell xps", "hp spectre", "lenovo ideapad"],
+      "negativeKeywords": ["charger", "cable", "case", "bag", "stand", "sleeve", "skin", "for macbook", "for laptop", "compatible with", "adapter", "dock", "hub"]
+    },
+    "tablet": {
+      "naicsCodes": ["334100", "334200"],
+      "typicalWeight": { "min": 0.3, "max": 0.7, "unit": "kg" },
+      "co2eKg": { "min": 80, "max": 200, "median": 120 },
+      "waterLiters": { "min": 15000, "max": 30000, "median": 20000 },
+      "energyKwh": { "min": 200, "max": 500, "median": 350 },
+      "typicalPrice": { "min": 200, "max": 1500, "median": 600, "currency": "USD" },
+      "typicalLifespan": { "years": 4 },
+      "mainMaterials": ["aluminum", "glass", "lithium_battery", "pcb"],
+      "materialComposition": {
+        "aluminum": 28,
+        "lithium_battery": 30,
+        "glass": 20,
+        "pcb": 12,
+        "copper": 5,
+        "steel_virgin": 3,
+        "silicon_wafer": 2
+      },
+      "weightModel": { "baseKg": 0.48, "priceCoeffKgPerDollar": 0.000154 },
+      "keywords": ["tablet", "ipad", "galaxy tab", "surface", "kindle", "fire tablet", "tab s"],
+      "negativeKeywords": ["case", "cover", "keyboard for", "stand for", "for ipad", "compatible with", "screen protector"]
+    },
+    "television": {
+      "naicsCodes": ["334300"],
+      "typicalWeight": { "min": 5.0, "max": 25.0, "unit": "kg" },
+      "co2eKg": { "min": 300, "max": 1200, "median": 600 },
+      "waterLiters": { "min": 25000, "max": 80000, "median": 45000 },
+      "energyKwh": { "min": 500, "max": 2500, "median": 1200 },
+      "typicalPrice": { "min": 200, "max": 3000, "median": 700, "currency": "USD" },
+      "typicalLifespan": { "years": 8 },
+      "mainMaterials": ["glass", "steel_virgin", "pcb", "abs", "copper"],
+      "materialComposition": {
+        "glass": 35,
+        "steel_virgin": 25,
+        "abs": 18,
+        "pcb": 10,
+        "copper": 6,
+        "aluminum": 4,
+        "lithium_battery": 2
+      },
+      "weightModel": { "baseKg": 15.0, "priceCoeffKgPerDollar": 0.007143 },
+      "keywords": ["tv", "television", "smart tv", "oled tv", "qled tv", "led tv", "flat screen tv", "55 inch tv", "65 inch tv"],
+      "negativeKeywords": ["remote", "mount", "stand for", "wall bracket", "for tv", "tv cable"]
+    },
+    "tshirt": {
+      "naicsCodes": ["315100", "315200"],
+      "typicalWeight": { "min": 0.12, "max": 0.25, "unit": "kg" },
+      "co2eKg": { "min": 2, "max": 12, "median": 6.5 },
+      "waterLiters": { "min": 1500, "max": 4000, "median": 2700 },
+      "energyKwh": { "min": 5, "max": 20, "median": 10 },
+      "typicalPrice": { "min": 5, "max": 80, "median": 25, "currency": "USD" },
+      "typicalLifespan": { "years": 2 },
+      "mainMaterials": ["cotton", "polyester"],
+      "materialComposition": {
+        "cotton": 85,
+        "polyester": 15
+      },
+      "weightModel": { "baseKg": 0.17, "priceCoeffKgPerDollar": 0.000800 },
+      "keywords": ["t-shirt", "tshirt", "tee shirt", "polo shirt", "crew neck", "tank top", "blouse", "henley"]
+    },
+    "jeans": {
+      "naicsCodes": ["315200"],
+      "typicalWeight": { "min": 0.7, "max": 1.2, "unit": "kg" },
+      "co2eKg": { "min": 10, "max": 40, "median": 20 },
+      "waterLiters": { "min": 5000, "max": 10000, "median": 7500 },
+      "energyKwh": { "min": 20, "max": 60, "median": 40 },
+      "typicalPrice": { "min": 20, "max": 200, "median": 60, "currency": "USD" },
+      "typicalLifespan": { "years": 3 },
+      "mainMaterials": ["cotton", "polyester", "leather"],
+      "materialComposition": {
+        "cotton": 75,
+        "polyester": 17,
+        "leather": 5,
+        "copper": 3
+      },
+      "weightModel": { "baseKg": 0.90, "priceCoeffKgPerDollar": 0.001111 },
+      "keywords": ["jeans", "denim", "trousers", "pants"]
+    },
+    "jacket": {
+      "naicsCodes": ["315200"],
+      "typicalWeight": { "min": 0.4, "max": 1.5, "unit": "kg" },
+      "co2eKg": { "min": 8, "max": 50, "median": 15 },
+      "waterLiters": { "min": 2000, "max": 5000, "median": 3000 },
+      "energyKwh": { "min": 12, "max": 40, "median": 25 },
+      "typicalPrice": { "min": 30, "max": 500, "median": 120, "currency": "USD" },
+      "typicalLifespan": { "years": 4 },
+      "mainMaterials": ["polyester", "nylon", "cotton"],
+      "materialComposition": {
+        "polyester": 45,
+        "nylon": 30,
+        "cotton": 15,
+        "pp": 5,
+        "rubber_synthetic": 5
+      },
+      "weightModel": { "baseKg": 0.80, "priceCoeffKgPerDollar": 0.001489 },
+      "keywords": ["jacket", "coat", "parka", "blazer", "windbreaker", "hoodie", "sweater", "sweatshirt", "pullover"]
+    },
+    "leather_jacket": {
+      "naicsCodes": ["315200", "316100"],
+      "typicalWeight": { "min": 1.0, "max": 2.5, "unit": "kg" },
+      "co2eKg": { "min": 25, "max": 80, "median": 40 },
+      "waterLiters": { "min": 12000, "max": 25000, "median": 17000 },
+      "energyKwh": { "min": 30, "max": 90, "median": 60 },
+      "typicalPrice": { "min": 100, "max": 1500, "median": 400, "currency": "USD" },
+      "typicalLifespan": { "years": 10 },
+      "mainMaterials": ["leather", "polyester", "cotton"],
+      "materialComposition": {
+        "leather": 65,
+        "polyester": 18,
+        "cotton": 10,
+        "copper": 4,
+        "pp": 3
+      },
+      "weightModel": { "baseKg": 1.60, "priceCoeffKgPerDollar": 0.000714 },
+      "keywords": ["leather jacket", "biker jacket", "leather coat"]
+    },
+    "sneakers": {
+      "naicsCodes": ["316200"],
+      "typicalWeight": { "min": 0.5, "max": 1.0, "unit": "kg" },
+      "co2eKg": { "min": 8, "max": 25, "median": 14 },
+      "waterLiters": { "min": 2000, "max": 6000, "median": 3500 },
+      "energyKwh": { "min": 10, "max": 30, "median": 18 },
+      "typicalPrice": { "min": 40, "max": 250, "median": 100, "currency": "USD" },
+      "typicalLifespan": { "years": 2 },
+      "mainMaterials": ["rubber_synthetic", "polyester", "nylon", "leather"],
+      "materialComposition": {
+        "rubber_synthetic": 35,
+        "polyester": 25,
+        "foam": 15,
+        "leather": 10,
+        "nylon": 10,
+        "cotton": 5
+      },
+      "weightModel": { "baseKg": 0.70, "priceCoeffKgPerDollar": 0.001429 },
+      "keywords": ["shoes", "sneakers", "trainers", "boots", "sandals", "footwear", "nike", "adidas", "new balance", "running shoes", "athletic shoes"]
+    },
+    "chair": {
+      "naicsCodes": ["337100"],
+      "typicalWeight": { "min": 5.0, "max": 20.0, "unit": "kg" },
+      "co2eKg": { "min": 30, "max": 100, "median": 50 },
+      "waterLiters": { "min": 200, "max": 800, "median": 400 },
+      "energyKwh": { "min": 40, "max": 120, "median": 80 },
+      "typicalPrice": { "min": 50, "max": 1000, "median": 200, "currency": "USD" },
+      "typicalLifespan": { "years": 10 },
+      "mainMaterials": ["steel_virgin", "timber_hardwood", "pp", "polyester"],
+      "materialComposition": {
+        "steel_virgin": 40,
+        "pp": 20,
+        "timber_hardwood": 15,
+        "polyester": 12,
+        "foam": 8,
+        "nylon": 5
+      },
+      "weightModel": { "baseKg": 10.0, "priceCoeffKgPerDollar": 0.010526 },
+      "keywords": ["chair", "stool", "seat", "bench", "office chair", "dining chair"]
+    },
+    "desk": {
+      "naicsCodes": ["337100", "337200"],
+      "typicalWeight": { "min": 15.0, "max": 50.0, "unit": "kg" },
+      "co2eKg": { "min": 50, "max": 200, "median": 80 },
+      "waterLiters": { "min": 300, "max": 1500, "median": 600 },
+      "energyKwh": { "min": 80, "max": 250, "median": 150 },
+      "typicalPrice": { "min": 100, "max": 2000, "median": 400, "currency": "USD" },
+      "typicalLifespan": { "years": 15 },
+      "mainMaterials": ["timber_hardwood", "mdf", "steel_virgin", "plywood"],
+      "materialComposition": {
+        "mdf": 35,
+        "steel_virgin": 30,
+        "timber_hardwood": 15,
+        "plywood": 10,
+        "abs": 5,
+        "pp": 5
+      },
+      "weightModel": { "baseKg": 28.0, "priceCoeffKgPerDollar": 0.018421 },
+      "keywords": ["desk", "table", "workstation", "standing desk"]
+    },
+    "sofa": {
+      "naicsCodes": ["337100"],
+      "typicalWeight": { "min": 30.0, "max": 80.0, "unit": "kg" },
+      "co2eKg": { "min": 100, "max": 400, "median": 200 },
+      "waterLiters": { "min": 5000, "max": 20000, "median": 10000 },
+      "energyKwh": { "min": 200, "max": 600, "median": 350 },
+      "typicalPrice": { "min": 300, "max": 5000, "median": 1200, "currency": "USD" },
+      "typicalLifespan": { "years": 12 },
+      "mainMaterials": ["timber_softwood", "polyester", "cotton", "leather", "pp"],
+      "materialComposition": {
+        "foam": 25,
+        "timber_softwood": 22,
+        "polyester": 18,
+        "steel_virgin": 12,
+        "cotton": 10,
+        "pp": 8,
+        "leather": 5
+      },
+      "weightModel": { "baseKg": 50.0, "priceCoeffKgPerDollar": 0.010638 },
+      "keywords": ["sofa", "couch", "loveseat", "sectional"]
+    },
+    "washing_machine": {
+      "naicsCodes": ["335200"],
+      "typicalWeight": { "min": 50.0, "max": 90.0, "unit": "kg" },
+      "co2eKg": { "min": 200, "max": 500, "median": 300 },
+      "waterLiters": { "min": 15000, "max": 40000, "median": 25000 },
+      "energyKwh": { "min": 300, "max": 800, "median": 500 },
+      "typicalPrice": { "min": 300, "max": 1500, "median": 700, "currency": "USD" },
+      "typicalLifespan": { "years": 12 },
+      "mainMaterials": ["steel_virgin", "abs", "rubber_synthetic", "copper"],
+      "materialComposition": {
+        "steel_virgin": 55,
+        "abs": 15,
+        "rubber_synthetic": 10,
+        "copper": 8,
+        "aluminum": 5,
+        "concrete": 4,
+        "pcb": 3
+      },
+      "weightModel": { "baseKg": 65.0, "priceCoeffKgPerDollar": 0.033333 },
+      "keywords": ["washing machine", "washer", "laundry machine", "dryer"]
+    },
+    "refrigerator": {
+      "naicsCodes": ["335200"],
+      "typicalWeight": { "min": 50.0, "max": 120.0, "unit": "kg" },
+      "co2eKg": { "min": 250, "max": 700, "median": 400 },
+      "waterLiters": { "min": 20000, "max": 50000, "median": 30000 },
+      "energyKwh": { "min": 400, "max": 1200, "median": 700 },
+      "typicalPrice": { "min": 400, "max": 3000, "median": 1200, "currency": "USD" },
+      "typicalLifespan": { "years": 15 },
+      "mainMaterials": ["steel_virgin", "abs", "copper", "aluminum_virgin"],
+      "materialComposition": {
+        "steel_virgin": 50,
+        "abs": 18,
+        "copper": 8,
+        "aluminum_virgin": 8,
+        "foam": 6,
+        "glass": 5,
+        "pcb": 3,
+        "rubber_synthetic": 2
+      },
+      "weightModel": { "baseKg": 80.0, "priceCoeffKgPerDollar": 0.026923 },
+      "keywords": ["fridge", "refrigerator", "freezer"]
+    },
+    "bicycle": {
+      "naicsCodes": ["336990"],
+      "typicalWeight": { "min": 8.0, "max": 15.0, "unit": "kg" },
+      "co2eKg": { "min": 50, "max": 200, "median": 100 },
+      "waterLiters": { "min": 3000, "max": 10000, "median": 5000 },
+      "energyKwh": { "min": 80, "max": 250, "median": 150 },
+      "typicalPrice": { "min": 200, "max": 5000, "median": 800, "currency": "USD" },
+      "typicalLifespan": { "years": 10 },
+      "mainMaterials": ["aluminum_virgin", "steel_virgin", "rubber_synthetic", "carbon_fiber"],
+      "materialComposition": {
+        "aluminum_virgin": 40,
+        "steel_virgin": 25,
+        "rubber_synthetic": 15,
+        "carbon_fiber": 8,
+        "abs": 5,
+        "copper": 4,
+        "leather": 3
+      },
+      "weightModel": { "baseKg": 11.0, "priceCoeffKgPerDollar": -0.000625 },
+      "keywords": ["bike", "bicycle", "cycling", "mountain bike", "road bike", "e-bike"]
+    },
+    "book": {
+      "naicsCodes": ["322200", "511100"],
+      "typicalWeight": { "min": 0.2, "max": 0.6, "unit": "kg" },
+      "co2eKg": { "min": 0.5, "max": 3, "median": 1.2 },
+      "waterLiters": { "min": 5, "max": 20, "median": 10 },
+      "energyKwh": { "min": 1, "max": 5, "median": 2.5 },
+      "typicalPrice": { "min": 5, "max": 40, "median": 15, "currency": "USD" },
+      "typicalLifespan": { "years": 50 },
+      "mainMaterials": ["paper_virgin", "cardboard"],
+      "materialComposition": {
+        "paper_virgin": 85,
+        "cardboard": 12,
+        "ldpe": 3
+      },
+      "weightModel": { "baseKg": 0.35, "priceCoeffKgPerDollar": 0.008000 },
+      "keywords": ["book", "paperback", "hardcover", "novel", "textbook"]
+    },
+    "toy": {
+      "naicsCodes": ["339930"],
+      "typicalWeight": { "min": 0.1, "max": 2.0, "unit": "kg" },
+      "co2eKg": { "min": 1, "max": 15, "median": 5 },
+      "waterLiters": { "min": 100, "max": 2000, "median": 500 },
+      "energyKwh": { "min": 2, "max": 20, "median": 8 },
+      "typicalPrice": { "min": 5, "max": 150, "median": 30, "currency": "USD" },
+      "typicalLifespan": { "years": 3 },
+      "mainMaterials": ["abs", "pp", "hdpe"],
+      "materialComposition": {
+        "abs": 40,
+        "pp": 30,
+        "hdpe": 15,
+        "steel_virgin": 8,
+        "paper_virgin": 4,
+        "rubber_synthetic": 3
+      },
+      "weightModel": { "baseKg": 0.50, "priceCoeffKgPerDollar": 0.010345 },
+      "keywords": ["toy", "game", "lego", "figure", "doll", "puzzle", "board game"]
+    },
+    "cosmetics": {
+      "naicsCodes": ["325600"],
+      "typicalWeight": { "min": 0.05, "max": 0.5, "unit": "kg" },
+      "co2eKg": { "min": 0.5, "max": 5, "median": 2 },
+      "waterLiters": { "min": 50, "max": 500, "median": 200 },
+      "energyKwh": { "min": 0.5, "max": 5, "median": 2 },
+      "typicalPrice": { "min": 5, "max": 200, "median": 30, "currency": "USD" },
+      "typicalLifespan": { "years": 1 },
+      "mainMaterials": ["glass", "pp", "aluminum_virgin"],
+      "materialComposition": {
+        "glass": 45,
+        "pp": 25,
+        "aluminum_virgin": 15,
+        "ldpe": 10,
+        "cardboard": 5
+      },
+      "weightModel": { "baseKg": 0.15, "priceCoeffKgPerDollar": 0 },
+      "keywords": ["cosmetics", "makeup", "foundation", "lipstick", "mascara", "perfume", "fragrance", "cologne"]
+    },
+    "headphones": {
+      "naicsCodes": ["334310"],
+      "typicalWeight": { "min": 0.05, "max": 0.4, "unit": "kg" },
+      "co2eKg": { "min": 10, "max": 50, "median": 25 },
+      "waterLiters": { "min": 2000, "max": 8000, "median": 4500 },
+      "energyKwh": { "min": 40, "max": 120, "median": 75 },
+      "typicalPrice": { "min": 20, "max": 600, "median": 150, "currency": "USD" },
+      "typicalLifespan": { "years": 3 },
+      "mainMaterials": ["abs", "aluminum", "lithium_battery", "copper", "pcb"],
+      "materialComposition": {
+        "abs": 30,
+        "aluminum": 20,
+        "lithium_battery": 18,
+        "copper": 12,
+        "pcb": 8,
+        "foam": 7,
+        "nylon": 5
+      },
+      "weightModel": { "baseKg": 0.22, "priceCoeffKgPerDollar": 0.000310 },
+      "keywords": ["headphones", "earbuds", "earphones", "airpods", "airpods pro", "airpods max", "headset", "earpods", "wireless headphones", "bluetooth headphones", "noise cancelling", "over-ear", "in-ear", "sony wh", "bose", "beats"],
+      "negativeKeywords": ["case for", "ear tips", "replacement", "for airpods", "for headphones"]
+    },
+    "monitor": {
+      "naicsCodes": ["334118"],
+      "typicalWeight": { "min": 3.0, "max": 10.0, "unit": "kg" },
+      "co2eKg": { "min": 150, "max": 500, "median": 300 },
+      "waterLiters": { "min": 20000, "max": 50000, "median": 35000 },
+      "energyKwh": { "min": 600, "max": 1500, "median": 900 },
+      "typicalPrice": { "min": 150, "max": 2000, "median": 400, "currency": "USD" },
+      "typicalLifespan": { "years": 7 },
+      "mainMaterials": ["glass", "steel_virgin", "pcb", "abs", "aluminum"],
+      "materialComposition": {
+        "glass": 30,
+        "steel_virgin": 25,
+        "abs": 18,
+        "pcb": 10,
+        "aluminum": 8,
+        "copper": 5,
+        "lithium_battery": 4
+      },
+      "weightModel": { "baseKg": 5.5, "priceCoeffKgPerDollar": 0.002703 },
+      "keywords": ["monitor", "display", "computer monitor", "gaming monitor", "ultrawide", "4k monitor", "curved monitor", "dell monitor", "lg monitor"],
+      "negativeKeywords": ["mount", "arm", "stand for", "for monitor", "monitor cable"]
+    },
+    "backpack": {
+      "naicsCodes": ["316998"],
+      "typicalWeight": { "min": 0.4, "max": 1.5, "unit": "kg" },
+      "co2eKg": { "min": 5, "max": 25, "median": 12 },
+      "waterLiters": { "min": 1000, "max": 4000, "median": 2000 },
+      "energyKwh": { "min": 10, "max": 35, "median": 20 },
+      "typicalPrice": { "min": 20, "max": 300, "median": 80, "currency": "USD" },
+      "typicalLifespan": { "years": 5 },
+      "mainMaterials": ["nylon", "polyester", "pp"],
+      "materialComposition": {
+        "nylon": 45,
+        "polyester": 30,
+        "pp": 10,
+        "foam": 8,
+        "steel_virgin": 4,
+        "rubber_synthetic": 3
+      },
+      "weightModel": { "baseKg": 0.80, "priceCoeffKgPerDollar": 0.002500 },
+      "keywords": ["backpack", "rucksack", "school bag", "daypack", "travel bag", "hiking pack", "laptop bag", "messenger bag", "duffel bag", "tote bag", "carry bag", "gym bag", "sling bag"]
+    },
+    "cookware": {
+      "naicsCodes": ["332215"],
+      "typicalWeight": { "min": 0.5, "max": 5.0, "unit": "kg" },
+      "co2eKg": { "min": 8, "max": 40, "median": 20 },
+      "waterLiters": { "min": 300, "max": 1500, "median": 800 },
+      "energyKwh": { "min": 20, "max": 80, "median": 45 },
+      "typicalPrice": { "min": 15, "max": 400, "median": 60, "currency": "USD" },
+      "typicalLifespan": { "years": 10 },
+      "mainMaterials": ["steel_virgin", "aluminum", "copper", "glass"],
+      "materialComposition": {
+        "steel_virgin": 50,
+        "aluminum": 25,
+        "copper": 10,
+        "glass": 8,
+        "rubber_synthetic": 4,
+        "pp": 3
+      },
+      "weightModel": { "baseKg": 1.80, "priceCoeffKgPerDollar": 0.008312 },
+      "keywords": ["pan", "pot", "skillet", "wok", "cookware", "cast iron", "frying pan", "saucepan", "dutch oven", "baking sheet", "kitchen"]
+    },
+    "skincare": {
+      "naicsCodes": ["325620"],
+      "typicalWeight": { "min": 0.05, "max": 0.5, "unit": "kg" },
+      "co2eKg": { "min": 0.5, "max": 8, "median": 3 },
+      "waterLiters": { "min": 500, "max": 3000, "median": 1500 },
+      "energyKwh": { "min": 1, "max": 10, "median": 5 },
+      "typicalPrice": { "min": 5, "max": 200, "median": 35, "currency": "USD" },
+      "typicalLifespan": { "years": 1 },
+      "mainMaterials": ["glass", "pp", "aluminum_virgin"],
+      "materialComposition": {
+        "glass": 40,
+        "pp": 25,
+        "aluminum_virgin": 15,
+        "hdpe": 10,
+        "paper_virgin": 5,
+        "cardboard": 5
+      },
+      "weightModel": { "baseKg": 0.15, "priceCoeffKgPerDollar": 0 },
+      "keywords": ["moisturizer", "serum", "sunscreen", "cleanser", "skincare", "face cream", "body lotion", "toner", "exfoliant", "retinol", "vitamin c serum", "shampoo", "conditioner"]
+    },
+
+    "charger": {
+      "naicsCodes": ["335999"],
+      "typicalWeight": { "min": 0.03, "max": 0.25, "unit": "kg" },
+      "co2eKg": { "min": 2, "max": 10, "median": 5 },
+      "waterLiters": { "min": 200, "max": 1500, "median": 600 },
+      "energyKwh": { "min": 5, "max": 30, "median": 15 },
+      "typicalPrice": { "min": 8, "max": 80, "median": 30, "currency": "USD" },
+      "typicalLifespan": { "years": 3 },
+      "mainMaterials": ["pcb", "abs", "copper"],
+      "materialComposition": {
+        "pcb": 35,
+        "abs": 30,
+        "copper": 20,
+        "steel_virgin": 10,
+        "rubber_synthetic": 5
+      },
+      "weightModel": { "baseKg": 0.10, "priceCoeffKgPerDollar": 0.002083 },
+      "keywords": ["charger", "charging", "wall charger", "car charger", "fast charger", "usb charger", "wireless charger", "gan charger", "charging station", "magsafe charger", "anker charger"]
+    },
+    "cable_adapter": {
+      "naicsCodes": ["335930"],
+      "typicalWeight": { "min": 0.02, "max": 0.15, "unit": "kg" },
+      "co2eKg": { "min": 0.5, "max": 5, "median": 2 },
+      "waterLiters": { "min": 50, "max": 500, "median": 200 },
+      "energyKwh": { "min": 1, "max": 10, "median": 4 },
+      "typicalPrice": { "min": 5, "max": 50, "median": 15, "currency": "USD" },
+      "typicalLifespan": { "years": 3 },
+      "mainMaterials": ["copper", "abs", "rubber_synthetic"],
+      "materialComposition": {
+        "copper": 40,
+        "abs": 25,
+        "rubber_synthetic": 20,
+        "steel_virgin": 10,
+        "pp": 5
+      },
+      "weightModel": { "baseKg": 0.05, "priceCoeffKgPerDollar": 0.002222 },
+      "keywords": ["cable", "usb cable", "usb-c cable", "lightning cable", "hdmi cable", "adapter", "dongle", "hub", "usb hub", "docking station", "converter", "splitter", "extension cord", "ethernet cable"]
+    },
+    "phone_case": {
+      "naicsCodes": ["326199"],
+      "typicalWeight": { "min": 0.02, "max": 0.15, "unit": "kg" },
+      "co2eKg": { "min": 0.3, "max": 3, "median": 1 },
+      "waterLiters": { "min": 30, "max": 300, "median": 100 },
+      "energyKwh": { "min": 0.5, "max": 5, "median": 2 },
+      "typicalPrice": { "min": 5, "max": 60, "median": 20, "currency": "USD" },
+      "typicalLifespan": { "years": 2 },
+      "mainMaterials": ["abs", "rubber_synthetic", "polycarbonate"],
+      "materialComposition": {
+        "abs": 40,
+        "rubber_synthetic": 25,
+        "polycarbonate": 20,
+        "pp": 10,
+        "steel_virgin": 5
+      },
+      "weightModel": { "baseKg": 0.04, "priceCoeffKgPerDollar": 0.001818 },
+      "keywords": ["phone case", "iphone case", "samsung case", "protective case", "bumper case", "clear case", "silicone case", "otterbox", "spigen", "screen protector", "tempered glass", "phone cover", "phone skin"]
+    },
+    "power_bank": {
+      "naicsCodes": ["335911"],
+      "typicalWeight": { "min": 0.15, "max": 0.5, "unit": "kg" },
+      "co2eKg": { "min": 5, "max": 20, "median": 10 },
+      "waterLiters": { "min": 500, "max": 3000, "median": 1200 },
+      "energyKwh": { "min": 10, "max": 50, "median": 25 },
+      "typicalPrice": { "min": 15, "max": 80, "median": 35, "currency": "USD" },
+      "typicalLifespan": { "years": 3 },
+      "mainMaterials": ["lithium_battery", "abs", "pcb"],
+      "materialComposition": {
+        "lithium_battery": 50,
+        "abs": 20,
+        "pcb": 15,
+        "copper": 8,
+        "steel_virgin": 4,
+        "rubber_synthetic": 3
+      },
+      "weightModel": { "baseKg": 0.30, "priceCoeffKgPerDollar": 0.003077 },
+      "keywords": ["power bank", "portable charger", "portable battery", "battery pack", "anker powercore", "external battery", "backup battery"]
+    },
+    "smartwatch": {
+      "naicsCodes": ["334518"],
+      "typicalWeight": { "min": 0.03, "max": 0.08, "unit": "kg" },
+      "co2eKg": { "min": 15, "max": 50, "median": 30 },
+      "waterLiters": { "min": 2000, "max": 6000, "median": 3500 },
+      "energyKwh": { "min": 50, "max": 150, "median": 90 },
+      "typicalPrice": { "min": 50, "max": 800, "median": 300, "currency": "USD" },
+      "typicalLifespan": { "years": 3 },
+      "mainMaterials": ["aluminum", "glass", "lithium_battery", "pcb"],
+      "materialComposition": {
+        "aluminum": 30,
+        "glass": 25,
+        "lithium_battery": 20,
+        "pcb": 12,
+        "copper": 5,
+        "rubber_synthetic": 5,
+        "silicon_wafer": 3
+      },
+      "weightModel": { "baseKg": 0.05, "priceCoeffKgPerDollar": 0.000040 },
+      "keywords": ["smartwatch", "smart watch", "fitness tracker", "apple watch", "garmin", "fitbit", "galaxy watch", "wearable", "activity tracker"]
+    },
+    "speaker": {
+      "naicsCodes": ["334310"],
+      "typicalWeight": { "min": 0.2, "max": 5.0, "unit": "kg" },
+      "co2eKg": { "min": 8, "max": 40, "median": 20 },
+      "waterLiters": { "min": 1000, "max": 6000, "median": 2500 },
+      "energyKwh": { "min": 20, "max": 100, "median": 50 },
+      "typicalPrice": { "min": 20, "max": 500, "median": 100, "currency": "USD" },
+      "typicalLifespan": { "years": 5 },
+      "mainMaterials": ["abs", "steel_virgin", "copper", "pcb"],
+      "materialComposition": {
+        "abs": 30,
+        "steel_virgin": 20,
+        "copper": 15,
+        "pcb": 12,
+        "lithium_battery": 10,
+        "rubber_synthetic": 8,
+        "foam": 5
+      },
+      "weightModel": { "baseKg": 1.0, "priceCoeffKgPerDollar": 0.008333 },
+      "keywords": ["speaker", "bluetooth speaker", "portable speaker", "soundbar", "smart speaker", "echo", "homepod", "sonos", "jbl", "bose speaker", "subwoofer"]
+    },
+    "keyboard_mouse": {
+      "naicsCodes": ["334118"],
+      "typicalWeight": { "min": 0.05, "max": 1.0, "unit": "kg" },
+      "co2eKg": { "min": 3, "max": 15, "median": 7 },
+      "waterLiters": { "min": 200, "max": 2000, "median": 800 },
+      "energyKwh": { "min": 5, "max": 30, "median": 15 },
+      "typicalPrice": { "min": 10, "max": 200, "median": 60, "currency": "USD" },
+      "typicalLifespan": { "years": 4 },
+      "mainMaterials": ["abs", "pcb", "rubber_synthetic"],
+      "materialComposition": {
+        "abs": 40,
+        "pcb": 20,
+        "rubber_synthetic": 15,
+        "steel_virgin": 10,
+        "copper": 8,
+        "lithium_battery": 5,
+        "pp": 2
+      },
+      "weightModel": { "baseKg": 0.40, "priceCoeffKgPerDollar": 0.002632 },
+      "keywords": ["keyboard", "mouse", "mechanical keyboard", "wireless mouse", "gaming mouse", "trackpad", "logitech", "razer", "corsair", "mx keys", "mx master"]
+    },
+    "small_appliance": {
+      "naicsCodes": ["335210"],
+      "typicalWeight": { "min": 1.0, "max": 8.0, "unit": "kg" },
+      "co2eKg": { "min": 15, "max": 60, "median": 30 },
+      "waterLiters": { "min": 1000, "max": 8000, "median": 3000 },
+      "energyKwh": { "min": 30, "max": 120, "median": 60 },
+      "typicalPrice": { "min": 20, "max": 300, "median": 80, "currency": "USD" },
+      "typicalLifespan": { "years": 5 },
+      "mainMaterials": ["steel_virgin", "abs", "glass", "copper"],
+      "materialComposition": {
+        "steel_virgin": 35,
+        "abs": 25,
+        "glass": 15,
+        "copper": 10,
+        "pcb": 8,
+        "rubber_synthetic": 4,
+        "aluminum": 3
+      },
+      "weightModel": { "baseKg": 3.0, "priceCoeffKgPerDollar": 0.025000 },
+      "keywords": ["coffee maker", "toaster", "blender", "air fryer", "instant pot", "food processor", "rice cooker", "microwave", "kettle", "juicer", "mixer", "iron", "hair dryer", "vacuum cleaner", "robot vacuum", "roomba", "dyson"]
+    },
+
+    "default": {
+      "naicsCodes": ["339900"],
+      "typicalWeight": { "min": 0.1, "max": 10.0, "unit": "kg" },
+      "co2eKg": { "min": 1, "max": 100, "median": 30 },
+      "waterLiters": { "min": 100, "max": 10000, "median": 5000 },
+      "energyKwh": { "min": 5, "max": 200, "median": 50 },
+      "typicalPrice": { "min": 10, "max": 500, "median": 100, "currency": "USD" },
+      "typicalLifespan": { "years": 5 },
+      "mainMaterials": [],
+      "keywords": []
+    }
+  }
+}

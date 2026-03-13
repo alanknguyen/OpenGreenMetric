@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "source": "US EPA GHG Emission Factors Hub",
+    "year": 2025,
+    "description": "Activity-based emission factors for common activities"
+  },
+  "electricity": {
+    "us_average": {
+      "kgCO2ePerKwh": 0.371,
+      "note": "US national average grid intensity 2023"
+    },
+    "regions": {
+      "AKGD": { "kgCO2ePerKwh": 0.424, "name": "ASCC Alaska Grid" },
+      "AKMS": { "kgCO2ePerKwh": 0.203, "name": "ASCC Miscellaneous" },
+      "CAMX": { "kgCO2ePerKwh": 0.225, "name": "WECC California" },
+      "ERCT": { "kgCO2ePerKwh": 0.379, "name": "ERCOT Texas" },
+      "FRCC": { "kgCO2ePerKwh": 0.381, "name": "FRCC Florida" },
+      "MROE": { "kgCO2ePerKwh": 0.549, "name": "MRO East" },
+      "MROW": { "kgCO2ePerKwh": 0.434, "name": "MRO West" },
+      "NEWE": { "kgCO2ePerKwh": 0.218, "name": "NPCC New England" },
+      "NWPP": { "kgCO2ePerKwh": 0.264, "name": "WECC Northwest" },
+      "NYCW": { "kgCO2ePerKwh": 0.244, "name": "NPCC NYC/Westchester" },
+      "NYLI": { "kgCO2ePerKwh": 0.486, "name": "NPCC Long Island" },
+      "NYUP": { "kgCO2ePerKwh": 0.117, "name": "NPCC Upstate NY" },
+      "RFCE": { "kgCO2ePerKwh": 0.302, "name": "RFC East" },
+      "RFCM": { "kgCO2ePerKwh": 0.538, "name": "RFC Michigan" },
+      "RFCW": { "kgCO2ePerKwh": 0.497, "name": "RFC West" },
+      "RMPA": { "kgCO2ePerKwh": 0.535, "name": "WECC Rockies" },
+      "SPNO": { "kgCO2ePerKwh": 0.467, "name": "SPP North" },
+      "SPSO": { "kgCO2ePerKwh": 0.407, "name": "SPP South" },
+      "SRMV": { "kgCO2ePerKwh": 0.37, "name": "SERC Mississippi Valley" },
+      "SRMW": { "kgCO2ePerKwh": 0.638, "name": "SERC Midwest" },
+      "SRSO": { "kgCO2ePerKwh": 0.382, "name": "SERC South" },
+      "SRTV": { "kgCO2ePerKwh": 0.389, "name": "SERC Tennessee Valley" },
+      "SRVC": { "kgCO2ePerKwh": 0.299, "name": "SERC Virginia/Carolina" }
+    },
+    "international": {
+      "EU27": { "kgCO2ePerKwh": 0.233, "name": "European Union average" },
+      "UK": { "kgCO2ePerKwh": 0.207, "name": "United Kingdom" },
+      "CN": { "kgCO2ePerKwh": 0.555, "name": "China" },
+      "IN": { "kgCO2ePerKwh": 0.708, "name": "India" },
+      "JP": { "kgCO2ePerKwh": 0.457, "name": "Japan" },
+      "KR": { "kgCO2ePerKwh": 0.415, "name": "South Korea" },
+      "VN": { "kgCO2ePerKwh": 0.503, "name": "Vietnam" },
+      "BD": { "kgCO2ePerKwh": 0.578, "name": "Bangladesh" },
+      "TW": { "kgCO2ePerKwh": 0.509, "name": "Taiwan" },
+      "TH": { "kgCO2ePerKwh": 0.438, "name": "Thailand" },
+      "ID": { "kgCO2ePerKwh": 0.671, "name": "Indonesia" },
+      "BR": { "kgCO2ePerKwh": 0.074, "name": "Brazil" },
+      "MX": { "kgCO2ePerKwh": 0.423, "name": "Mexico" },
+      "DE": { "kgCO2ePerKwh": 0.338, "name": "Germany" },
+      "FR": { "kgCO2ePerKwh": 0.052, "name": "France" },
+      "IT": { "kgCO2ePerKwh": 0.233, "name": "Italy" },
+      "ES": { "kgCO2ePerKwh": 0.15, "name": "Spain" },
+      "NL": { "kgCO2ePerKwh": 0.328, "name": "Netherlands" },
+      "PL": { "kgCO2ePerKwh": 0.635, "name": "Poland" },
+      "SE": { "kgCO2ePerKwh": 0.012, "name": "Sweden" },
+      "AT": { "kgCO2ePerKwh": 0.085, "name": "Austria" },
+      "BE": { "kgCO2ePerKwh": 0.155, "name": "Belgium" },
+      "CZ": { "kgCO2ePerKwh": 0.37, "name": "Czech Republic" },
+      "DK": { "kgCO2ePerKwh": 0.115, "name": "Denmark" },
+      "FI": { "kgCO2ePerKwh": 0.07, "name": "Finland" },
+      "GR": { "kgCO2ePerKwh": 0.34, "name": "Greece" },
+      "HU": { "kgCO2ePerKwh": 0.21, "name": "Hungary" },
+      "IE": { "kgCO2ePerKwh": 0.26, "name": "Ireland" },
+      "LU": { "kgCO2ePerKwh": 0.12, "name": "Luxembourg" },
+      "PT": { "kgCO2ePerKwh": 0.185, "name": "Portugal" },
+      "RO": { "kgCO2ePerKwh": 0.24, "name": "Romania" },
+      "SK": { "kgCO2ePerKwh": 0.105, "name": "Slovakia" },
+      "BG": { "kgCO2ePerKwh": 0.38, "name": "Bulgaria" },
+      "HR": { "kgCO2ePerKwh": 0.14, "name": "Croatia" },
+      "SI": { "kgCO2ePerKwh": 0.22, "name": "Slovenia" },
+      "LT": { "kgCO2ePerKwh": 0.05, "name": "Lithuania" },
+      "LV": { "kgCO2ePerKwh": 0.09, "name": "Latvia" },
+      "EE": { "kgCO2ePerKwh": 0.5, "name": "Estonia" },
+      "MY": { "kgCO2ePerKwh": 0.485, "name": "Malaysia" },
+      "PH": { "kgCO2ePerKwh": 0.54, "name": "Philippines" },
+      "KH": { "kgCO2ePerKwh": 0.52, "name": "Cambodia" },
+      "PK": { "kgCO2ePerKwh": 0.36, "name": "Pakistan" },
+      "AU": { "kgCO2ePerKwh": 0.51, "name": "Australia" },
+      "CA": { "kgCO2ePerKwh": 0.11, "name": "Canada" },
+      "ZA": { "kgCO2ePerKwh": 0.9, "name": "South Africa" },
+      "EG": { "kgCO2ePerKwh": 0.42, "name": "Egypt" },
+      "NG": { "kgCO2ePerKwh": 0.38, "name": "Nigeria" },
+      "SA": { "kgCO2ePerKwh": 0.58, "name": "Saudi Arabia" },
+      "AE": { "kgCO2ePerKwh": 0.38, "name": "United Arab Emirates" },
+      "AR": { "kgCO2ePerKwh": 0.29, "name": "Argentina" },
+      "CL": { "kgCO2ePerKwh": 0.31, "name": "Chile" },
+      "CO": { "kgCO2ePerKwh": 0.13, "name": "Colombia" },
+      "PE": { "kgCO2ePerKwh": 0.19, "name": "Peru" },
+      "NZ": { "kgCO2ePerKwh": 0.085, "name": "New Zealand" },
+      "SG": { "kgCO2ePerKwh": 0.408, "name": "Singapore" }
+    }
+  },
+  "stationaryCombustion": {
+    "naturalGas": {
+      "kgCO2PerMmbtu": 53.06,
+      "kgCH4PerMmbtu": 0.001,
+      "kgN2OPerMmbtu": 0.0001
+    },
+    "diesel": {
+      "kgCO2PerGallon": 10.21,
+      "kgCH4PerGallon": 0.00041,
+      "kgN2OPerGallon": 0.00008
+    },
+    "propane": {
+      "kgCO2PerGallon": 5.72,
+      "kgCH4PerGallon": 0.00024,
+      "kgN2OPerGallon": 0.00005
+    },
+    "coal_bituminous": {
+      "kgCO2PerShortTon": 2328,
+      "kgCH4PerShortTon": 0.011,
+      "kgN2OPerShortTon": 0.0016
+    }
+  },
+  "mobileCombustion": {
+    "passengerCar_gasoline": {
+      "kgCO2PerMile": 0.348,
+      "kgCH4PerMile": 0.0000264,
+      "kgN2OPerMile": 0.0000729
+    },
+    "lightTruck_gasoline": {
+      "kgCO2PerMile": 0.464,
+      "kgCH4PerMile": 0.0000304,
+      "kgN2OPerMile": 0.0000836
+    },
+    "heavyTruck_diesel": {
+      "kgCO2PerMile": 1.692,
+      "kgCH4PerMile": 0.0000051,
+      "kgN2OPerMile": 0.0000502
+    },
+    "motorcycle": {
+      "kgCO2PerMile": 0.2,
+      "kgCH4PerMile": 0.0000528,
+      "kgN2OPerMile": 0.0000244
+    }
+  },
+  "waste": {
+    "landfill_mixed_msw": {
+      "kgCO2ePerShortTon": 459,
+      "note": "Mixed MSW to landfill, national average"
+    },
+    "combustion_mixed_msw": {
+      "kgCO2ePerShortTon": 385,
+      "note": "Mixed MSW combusted with energy recovery"
+    },
+    "recycling_aluminum": {
+      "kgCO2ePerShortTon": -9071,
+      "note": "Net avoided emissions from recycling"
+    },
+    "recycling_steel": {
+      "kgCO2ePerShortTon": -1807,
+      "note": "Net avoided emissions from recycling"
+    },
+    "recycling_mixed_paper": {
+      "kgCO2ePerShortTon": -2855,
+      "note": "Net avoided emissions from recycling"
+    },
+    "recycling_mixed_plastics": {
+      "kgCO2ePerShortTon": -1361,
+      "note": "Net avoided emissions from recycling"
+    },
+    "recycling_glass": {
+      "kgCO2ePerShortTon": -279,
+      "note": "Net avoided emissions from recycling"
+    },
+    "composting_food_waste": {
+      "kgCO2ePerShortTon": -176,
+      "note": "Net avoided emissions from composting"
+    }
+  }
+}

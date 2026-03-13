@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "source": "EF 3.1 (LCIA method), JRC 2022 + IPCC AR6 GWP100",
+    "version": "3.1",
+    "description": "Maps emitted substances to their characterized impact values across PEF categories. Each substance may contribute to multiple impact categories.",
+    "units_per_kg_emitted": true
+  },
+  "substances": {
+    "CO2_fossil": {
+      "climate_change": { "value": 1.0, "unit": "kg CO2 eq" }
+    },
+    "CO2_land_use_change": {
+      "climate_change": { "value": 1.0, "unit": "kg CO2 eq" }
+    },
+    "CH4_fossil": {
+      "climate_change": { "value": 29.8, "unit": "kg CO2 eq" },
+      "photochemical_ozone_formation": { "value": 0.0101, "unit": "kg NMVOC eq" }
+    },
+    "CH4_biogenic": {
+      "climate_change": { "value": 27.0, "unit": "kg CO2 eq" },
+      "photochemical_ozone_formation": { "value": 0.0101, "unit": "kg NMVOC eq" }
+    },
+    "N2O": {
+      "climate_change": { "value": 273.0, "unit": "kg CO2 eq" }
+    },
+    "SF6": {
+      "climate_change": { "value": 25200.0, "unit": "kg CO2 eq" }
+    },
+    "HFC_134a": {
+      "climate_change": { "value": 1530.0, "unit": "kg CO2 eq" }
+    },
+    "CFC_11": {
+      "climate_change": { "value": 6226.0, "unit": "kg CO2 eq" },
+      "ozone_depletion": { "value": 1.0, "unit": "kg CFC-11 eq" }
+    },
+    "CFC_12": {
+      "climate_change": { "value": 12500.0, "unit": "kg CO2 eq" },
+      "ozone_depletion": { "value": 0.82, "unit": "kg CFC-11 eq" }
+    },
+    "HCFC_22": {
+      "climate_change": { "value": 1960.0, "unit": "kg CO2 eq" },
+      "ozone_depletion": { "value": 0.034, "unit": "kg CFC-11 eq" }
+    },
+    "SO2": {
+      "acidification": { "value": 1.31, "unit": "mol H+ eq" },
+      "particulate_matter": { "value": 5.46e-4, "unit": "disease incidence" }
+    },
+    "NOx": {
+      "acidification": { "value": 0.74, "unit": "mol H+ eq" },
+      "eutrophication_terrestrial": { "value": 3.29, "unit": "mol N eq" },
+      "eutrophication_marine": { "value": 0.29, "unit": "kg N eq" },
+      "photochemical_ozone_formation": { "value": 0.60, "unit": "kg NMVOC eq" },
+      "particulate_matter": { "value": 2.27e-4, "unit": "disease incidence" }
+    },
+    "NH3": {
+      "acidification": { "value": 3.02, "unit": "mol H+ eq" },
+      "eutrophication_terrestrial": { "value": 7.88, "unit": "mol N eq" },
+      "eutrophication_marine": { "value": 0.82, "unit": "kg N eq" },
+      "particulate_matter": { "value": 3.69e-4, "unit": "disease incidence" }
+    },
+    "HCl": {
+      "acidification": { "value": 0.88, "unit": "mol H+ eq" }
+    },
+    "HF": {
+      "acidification": { "value": 1.60, "unit": "mol H+ eq" }
+    },
+    "PM2.5": {
+      "particulate_matter": { "value": 9.15e-4, "unit": "disease incidence" }
+    },
+    "PM10": {
+      "particulate_matter": { "value": 2.44e-4, "unit": "disease incidence" }
+    },
+    "NMVOC": {
+      "photochemical_ozone_formation": { "value": 1.0, "unit": "kg NMVOC eq" }
+    },
+    "CO": {
+      "photochemical_ozone_formation": { "value": 0.0456, "unit": "kg NMVOC eq" }
+    },
+    "PO4": {
+      "eutrophication_freshwater": { "value": 0.33, "unit": "kg P eq" }
+    },
+    "P_total_water": {
+      "eutrophication_freshwater": { "value": 1.0, "unit": "kg P eq" }
+    },
+    "N_total_water": {
+      "eutrophication_marine": { "value": 1.0, "unit": "kg N eq" }
+    },
+    "NO3_water": {
+      "eutrophication_marine": { "value": 0.226, "unit": "kg N eq" }
+    },
+    "Sb": {
+      "resource_use_minerals_metals": { "value": 1.0, "unit": "kg Sb eq" }
+    },
+    "Cu_ore": {
+      "resource_use_minerals_metals": { "value": 1.37e-3, "unit": "kg Sb eq" }
+    },
+    "Fe_ore": {
+      "resource_use_minerals_metals": { "value": 5.24e-8, "unit": "kg Sb eq" }
+    },
+    "Al_ore": {
+      "resource_use_minerals_metals": { "value": 1.09e-7, "unit": "kg Sb eq" }
+    },
+    "Li_ore": {
+      "resource_use_minerals_metals": { "value": 1.15e-5, "unit": "kg Sb eq" }
+    },
+    "Co_ore": {
+      "resource_use_minerals_metals": { "value": 2.08e-4, "unit": "kg Sb eq" }
+    },
+    "water_consumed": {
+      "water_use": { "value": 1.0, "unit": "m3 world eq" }
+    },
+    "crude_oil_MJ": {
+      "resource_use_fossils": { "value": 1.0, "unit": "MJ" }
+    },
+    "natural_gas_MJ": {
+      "resource_use_fossils": { "value": 1.0, "unit": "MJ" }
+    },
+    "hard_coal_MJ": {
+      "resource_use_fossils": { "value": 1.0, "unit": "MJ" }
+    },
+    "Cr_VI_water": {
+      "human_toxicity_cancer": { "value": 1.05e-5, "unit": "CTUh" },
+      "ecotoxicity_freshwater": { "value": 3.88e4, "unit": "CTUe" }
+    },
+    "Hg_air": {
+      "human_toxicity_non_cancer": { "value": 1.12e-4, "unit": "CTUh" }
+    },
+    "Pb_water": {
+      "human_toxicity_non_cancer": { "value": 3.53e-6, "unit": "CTUh" },
+      "ecotoxicity_freshwater": { "value": 1490.0, "unit": "CTUe" }
+    },
+    "Zn_water": {
+      "ecotoxicity_freshwater": { "value": 974.0, "unit": "CTUe" }
+    },
+    "Cu_water": {
+      "ecotoxicity_freshwater": { "value": 6540.0, "unit": "CTUe" }
+    },
+    "Rn_222_air": {
+      "ionising_radiation": { "value": 4.0e-3, "unit": "kBq U235 eq" }
+    },
+    "U_238_air": {
+      "ionising_radiation": { "value": 1.0, "unit": "kBq U235 eq" }
+    },
+    "C_14_air": {
+      "ionising_radiation": { "value": 3.66e-8, "unit": "kBq U235 eq" }
+    },
+    "Kr_85_air": {
+      "ionising_radiation": { "value": 1.85e-10, "unit": "kBq U235 eq" }
+    },
+    "land_occupation_annual_crop": {
+      "land_use": { "value": 0.888, "unit": "Pt" }
+    },
+    "land_occupation_forest": {
+      "land_use": { "value": -1.626, "unit": "Pt" }
+    },
+    "land_transformation_from_forest": {
+      "land_use": { "value": 145.0, "unit": "Pt" }
+    }
+  }
+}

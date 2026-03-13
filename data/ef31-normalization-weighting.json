@@ -1,0 +1,107 @@
+{
+  "metadata": {
+    "source": "Commission Recommendation (EU) 2021/2279, Annex 1",
+    "method": "EF 3.1",
+    "description": "Official PEF normalization factors (global per-capita reference, person/year) and weighting factors for all 16 impact categories. Single score = Σ (characterized_i / NF_i) × WF_i.",
+    "normalization_reference": "Global per-capita annual impact (person/year)",
+    "weighting_sum": 1.0
+  },
+  "categories": {
+    "climate_change": {
+      "nf": 7553.08,
+      "wf": 0.2106,
+      "unit": "kg CO2 eq",
+      "description": "Global warming from greenhouse gas emissions"
+    },
+    "particulate_matter": {
+      "nf": 5.95e-4,
+      "wf": 0.0896,
+      "unit": "disease incidence",
+      "description": "Health impacts from fine particulate matter"
+    },
+    "water_use": {
+      "nf": 11468.71,
+      "wf": 0.0851,
+      "unit": "m3 world eq",
+      "description": "Freshwater consumption weighted by local scarcity"
+    },
+    "resource_use_fossils": {
+      "nf": 65004.26,
+      "wf": 0.0832,
+      "unit": "MJ",
+      "description": "Depletion of fossil fuel resources"
+    },
+    "land_use": {
+      "nf": 819498.18,
+      "wf": 0.0794,
+      "unit": "Pt",
+      "description": "Soil quality impacts from land occupation and transformation"
+    },
+    "resource_use_minerals_metals": {
+      "nf": 6.36e-2,
+      "wf": 0.0755,
+      "unit": "kg Sb eq",
+      "description": "Depletion of mineral and metal resources"
+    },
+    "ozone_depletion": {
+      "nf": 5.23e-2,
+      "wf": 0.0631,
+      "unit": "kg CFC-11 eq",
+      "description": "Stratospheric ozone layer depletion"
+    },
+    "acidification": {
+      "nf": 55.57,
+      "wf": 0.0620,
+      "unit": "mol H+ eq",
+      "description": "Acidification of soils and water bodies"
+    },
+    "ionising_radiation": {
+      "nf": 4220.16,
+      "wf": 0.0501,
+      "unit": "kBq U235 eq",
+      "description": "Human health effects from ionising radiation"
+    },
+    "photochemical_ozone_formation": {
+      "nf": 40.86,
+      "wf": 0.0478,
+      "unit": "kg NMVOC eq",
+      "description": "Ground-level ozone formation (smog)"
+    },
+    "eutrophication_terrestrial": {
+      "nf": 176.75,
+      "wf": 0.0371,
+      "unit": "mol N eq",
+      "description": "Nutrient enrichment of terrestrial ecosystems"
+    },
+    "eutrophication_marine": {
+      "nf": 19.55,
+      "wf": 0.0296,
+      "unit": "kg N eq",
+      "description": "Nutrient enrichment of marine ecosystems"
+    },
+    "eutrophication_freshwater": {
+      "nf": 1.607,
+      "wf": 0.0280,
+      "unit": "kg P eq",
+      "description": "Nutrient enrichment of freshwater ecosystems"
+    },
+    "human_toxicity_cancer": {
+      "nf": 1.73e-5,
+      "wf": 0.0213,
+      "unit": "CTUh",
+      "description": "Cancer effects from toxic substance exposure"
+    },
+    "human_toxicity_non_cancer": {
+      "nf": 1.29e-4,
+      "wf": 0.0184,
+      "unit": "CTUh",
+      "description": "Non-cancer effects from toxic substance exposure"
+    },
+    "ecotoxicity_freshwater": {
+      "nf": 56716.59,
+      "wf": 0.0192,
+      "unit": "CTUe",
+      "description": "Toxic effects on freshwater ecosystems"
+    }
+  }
+}

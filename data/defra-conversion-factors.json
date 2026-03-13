@@ -1,0 +1,487 @@
+{
+  "metadata": {
+    "source": "UK Government GHG Conversion Factors (DEFRA/BEIS)",
+    "year": 2024,
+    "description": "Activity-based emission factors for materials, transport, and energy"
+  },
+  "materials": {
+    "cotton": {
+      "kgCO2ePerKg": 22.5,
+      "category": "textiles",
+      "note": "Virgin cotton fiber production"
+    },
+    "organic_cotton": {
+      "kgCO2ePerKg": 15.8,
+      "category": "textiles",
+      "note": "Organic cotton fiber"
+    },
+    "polyester": {
+      "kgCO2ePerKg": 5.55,
+      "category": "textiles",
+      "note": "Virgin polyester fiber"
+    },
+    "recycled_polyester": {
+      "kgCO2ePerKg": 2.11,
+      "category": "textiles",
+      "note": "Recycled polyester fiber"
+    },
+    "nylon": {
+      "kgCO2ePerKg": 7.95,
+      "category": "textiles",
+      "note": "Virgin nylon 6,6"
+    },
+    "wool": {
+      "kgCO2ePerKg": 26.2,
+      "category": "textiles",
+      "note": "Virgin wool fiber"
+    },
+    "silk": {
+      "kgCO2ePerKg": 14.1,
+      "category": "textiles",
+      "note": "Silk fiber"
+    },
+    "linen": {
+      "kgCO2ePerKg": 4.85,
+      "category": "textiles",
+      "note": "Linen (flax) fiber"
+    },
+    "leather": {
+      "kgCO2ePerKg": 17.0,
+      "category": "textiles",
+      "note": "Bovine leather (tanned)"
+    },
+    "aluminum_virgin": {
+      "kgCO2ePerKg": 9.16,
+      "category": "metals",
+      "note": "Primary aluminum ingot"
+    },
+    "aluminum_recycled": {
+      "kgCO2ePerKg": 0.84,
+      "category": "metals",
+      "note": "Recycled aluminum"
+    },
+    "steel_virgin": {
+      "kgCO2ePerKg": 2.89,
+      "category": "metals",
+      "note": "Primary steel (BOF)"
+    },
+    "steel_recycled": {
+      "kgCO2ePerKg": 0.47,
+      "category": "metals",
+      "note": "Recycled steel (EAF)"
+    },
+    "copper": {
+      "kgCO2ePerKg": 4.07,
+      "category": "metals",
+      "note": "Primary copper"
+    },
+    "gold": {
+      "kgCO2ePerKg": 31400,
+      "category": "metals",
+      "note": "Gold mining and refining"
+    },
+    "silver": {
+      "kgCO2ePerKg": 196,
+      "category": "metals",
+      "note": "Silver mining and refining"
+    },
+    "lithium_battery": {
+      "kgCO2ePerKg": 12.5,
+      "category": "electronics",
+      "note": "Li-ion battery manufacturing"
+    },
+    "silicon_wafer": {
+      "kgCO2ePerKg": 45.0,
+      "category": "electronics",
+      "note": "Semiconductor-grade silicon"
+    },
+    "pcb": {
+      "kgCO2ePerKg": 18.3,
+      "category": "electronics",
+      "note": "Printed circuit board"
+    },
+    "glass": {
+      "kgCO2ePerKg": 0.86,
+      "category": "materials",
+      "note": "Float glass production"
+    },
+    "concrete": {
+      "kgCO2ePerKg": 0.13,
+      "category": "construction",
+      "note": "Ready-mix concrete"
+    },
+    "cement": {
+      "kgCO2ePerKg": 0.93,
+      "category": "construction",
+      "note": "Portland cement"
+    },
+    "timber_softwood": {
+      "kgCO2ePerKg": 0.31,
+      "category": "construction",
+      "note": "Sawn softwood"
+    },
+    "timber_hardwood": {
+      "kgCO2ePerKg": 0.45,
+      "category": "construction",
+      "note": "Sawn hardwood"
+    },
+    "plywood": {
+      "kgCO2ePerKg": 0.65,
+      "category": "construction",
+      "note": "Plywood sheets"
+    },
+    "mdf": {
+      "kgCO2ePerKg": 0.59,
+      "category": "construction",
+      "note": "Medium-density fiberboard"
+    },
+    "hdpe": {
+      "kgCO2ePerKg": 3.11,
+      "category": "plastics",
+      "note": "High-density polyethylene"
+    },
+    "ldpe": {
+      "kgCO2ePerKg": 3.36,
+      "category": "plastics",
+      "note": "Low-density polyethylene"
+    },
+    "pet": {
+      "kgCO2ePerKg": 4.12,
+      "category": "plastics",
+      "note": "Polyethylene terephthalate"
+    },
+    "pp": {
+      "kgCO2ePerKg": 3.43,
+      "category": "plastics",
+      "note": "Polypropylene"
+    },
+    "pvc": {
+      "kgCO2ePerKg": 3.1,
+      "category": "plastics",
+      "note": "Polyvinyl chloride"
+    },
+    "abs": {
+      "kgCO2ePerKg": 4.49,
+      "category": "plastics",
+      "note": "Acrylonitrile butadiene styrene"
+    },
+    "polycarbonate": {
+      "kgCO2ePerKg": 7.62,
+      "category": "plastics",
+      "note": "Polycarbonate"
+    },
+    "rubber_natural": {
+      "kgCO2ePerKg": 2.66,
+      "category": "materials",
+      "note": "Natural rubber"
+    },
+    "rubber_synthetic": {
+      "kgCO2ePerKg": 3.18,
+      "category": "materials",
+      "note": "Synthetic rubber"
+    },
+    "paper_virgin": {
+      "kgCO2ePerKg": 1.29,
+      "category": "paper",
+      "note": "Virgin paper"
+    },
+    "paper_recycled": {
+      "kgCO2ePerKg": 0.67,
+      "category": "paper",
+      "note": "Recycled paper"
+    },
+    "cardboard": {
+      "kgCO2ePerKg": 0.79,
+      "category": "paper",
+      "note": "Corrugated cardboard"
+    },
+    "carbon_fiber": {
+      "kgCO2ePerKg": 29.5,
+      "category": "materials",
+      "note": "Carbon fiber composite"
+    },
+    "aluminum": {
+      "kgCO2ePerKg": 9.16,
+      "category": "metals",
+      "note": "Primary aluminum (alias)"
+    },
+    "foam": {
+      "kgCO2ePerKg": 3.5,
+      "category": "plastics",
+      "note": "Polyurethane foam (flexible)"
+    },
+    "titanium": {
+      "kgCO2ePerKg": 35.0,
+      "category": "metals",
+      "note": "Titanium sponge production"
+    },
+    "bamboo": {
+      "kgCO2ePerKg": 0.5,
+      "category": "materials",
+      "note": "Bamboo fiber/board"
+    },
+    "pu_synthetic": {
+      "kgCO2ePerKg": 4.2,
+      "category": "textiles",
+      "note": "Polyurethane synthetic leather"
+    },
+    "foam_eva": {
+      "kgCO2ePerKg": 3.5,
+      "category": "plastics",
+      "note": "EVA foam (ethylene vinyl acetate)"
+    },
+    "down_feather": {
+      "kgCO2ePerKg": 30.0,
+      "category": "textiles",
+      "note": "Down feather (goose/duck)"
+    },
+    "hemp": {
+      "kgCO2ePerKg": 2.1,
+      "category": "textiles",
+      "note": "Hemp fiber"
+    },
+    "tencel": {
+      "kgCO2ePerKg": 1.8,
+      "category": "textiles",
+      "note": "Tencel/Lyocell fiber (LENZING)"
+    },
+    "cork": {
+      "kgCO2ePerKg": 0.4,
+      "category": "materials",
+      "note": "Natural cork"
+    },
+    "acrylic": {
+      "kgCO2ePerKg": 5.0,
+      "category": "textiles",
+      "note": "Acrylic fiber"
+    },
+    "spandex": {
+      "kgCO2ePerKg": 8.5,
+      "category": "textiles",
+      "note": "Elastane/spandex fiber"
+    },
+    "viscose": {
+      "kgCO2ePerKg": 2.8,
+      "category": "textiles",
+      "note": "Viscose rayon fiber"
+    },
+    "jute": {
+      "kgCO2ePerKg": 0.6,
+      "category": "textiles",
+      "note": "Jute natural fiber"
+    },
+    "stainless_steel": {
+      "kgCO2ePerKg": 6.15,
+      "category": "metals",
+      "note": "Stainless steel (chromium-nickel)"
+    },
+    "zinc": {
+      "kgCO2ePerKg": 3.1,
+      "category": "metals",
+      "note": "Primary zinc slab"
+    },
+    "tin": {
+      "kgCO2ePerKg": 16.0,
+      "category": "metals",
+      "note": "Primary tin ingot"
+    },
+    "nickel": {
+      "kgCO2ePerKg": 12.0,
+      "category": "metals",
+      "note": "Primary nickel"
+    },
+    "brass": {
+      "kgCO2ePerKg": 3.8,
+      "category": "metals",
+      "note": "Brass alloy (Cu-Zn)"
+    },
+    "brick": {
+      "kgCO2ePerKg": 0.22,
+      "category": "construction",
+      "note": "Clay brick"
+    },
+    "mineral_wool": {
+      "kgCO2ePerKg": 1.4,
+      "category": "construction",
+      "note": "Mineral wool insulation"
+    },
+    "gypsum": {
+      "kgCO2ePerKg": 0.08,
+      "category": "construction",
+      "note": "Gypsum plasterboard"
+    },
+    "epoxy": {
+      "kgCO2ePerKg": 6.5,
+      "category": "plastics",
+      "note": "Epoxy resin"
+    },
+    "fiberglass": {
+      "kgCO2ePerKg": 2.5,
+      "category": "composites",
+      "note": "Glass-reinforced polymer"
+    },
+    "pla_bioplastic": {
+      "kgCO2ePerKg": 1.8,
+      "category": "plastics",
+      "note": "Polylactic acid bioplastic"
+    },
+    "denim": {
+      "kgCO2ePerKg": 7.5,
+      "category": "textiles",
+      "note": "Denim fabric (cotton-based)"
+    },
+    "ceramic": {
+      "kgCO2ePerKg": 0.7,
+      "category": "materials",
+      "note": "Ceramic tiles/pottery"
+    }
+  },
+  "transport": {
+    "road_freight_rigid": {
+      "kgCO2ePerTonneKm": 0.211,
+      "note": "Rigid truck (>3.5-7.5t)"
+    },
+    "road_freight_articulated": {
+      "kgCO2ePerTonneKm": 0.052,
+      "note": "Articulated truck (>33t)"
+    },
+    "road_freight_van": {
+      "kgCO2ePerTonneKm": 0.604,
+      "note": "Van (up to 3.5t)"
+    },
+    "rail_freight": {
+      "kgCO2ePerTonneKm": 0.025,
+      "note": "Rail freight, average"
+    },
+    "sea_freight_container": {
+      "kgCO2ePerTonneKm": 0.016,
+      "note": "Container ship, average"
+    },
+    "sea_freight_bulk": { "kgCO2ePerTonneKm": 0.005, "note": "Bulk carrier" },
+    "air_freight_longhaul": {
+      "kgCO2ePerTonneKm": 0.602,
+      "note": "Long-haul air freight"
+    },
+    "air_freight_shorthaul": {
+      "kgCO2ePerTonneKm": 1.128,
+      "note": "Short-haul air freight"
+    }
+  },
+  "countryDistances": {
+    "CN_US": {
+      "seaKm": 11500,
+      "note": "China to US West Coast (Shanghai → Los Angeles)"
+    },
+    "CN_EU": { "seaKm": 19000, "note": "China to Rotterdam (via Suez)" },
+    "CN_DE": { "seaKm": 19000, "note": "China to Hamburg (via Suez)" },
+    "CN_GB": { "seaKm": 19500, "note": "China to Felixstowe (via Suez)" },
+    "CN_JP": { "seaKm": 2100, "note": "Shanghai to Yokohama" },
+    "CN_KR": { "seaKm": 950, "note": "Shanghai to Busan" },
+    "CN_IN": { "seaKm": 6500, "note": "Shanghai to Mumbai (via Malacca)" },
+    "CN_TW": { "seaKm": 700, "note": "Shanghai to Kaohsiung" },
+    "VN_US": { "seaKm": 13000, "note": "Vietnam to US West Coast" },
+    "VN_EU": { "seaKm": 16000, "note": "Vietnam to Rotterdam" },
+    "VN_JP": { "seaKm": 4200, "note": "Ho Chi Minh to Yokohama" },
+    "BD_US": { "seaKm": 16000, "note": "Bangladesh to US East Coast" },
+    "BD_EU": { "seaKm": 14000, "note": "Bangladesh to Rotterdam" },
+    "BD_GB": { "seaKm": 14500, "note": "Chittagong to Felixstowe" },
+    "IN_US": {
+      "seaKm": 14500,
+      "note": "India to US East Coast (Mumbai → New York)"
+    },
+    "IN_EU": { "seaKm": 11000, "note": "India to Rotterdam (via Suez)" },
+    "IN_GB": { "seaKm": 11500, "note": "Mumbai to Felixstowe" },
+    "IN_DE": { "seaKm": 11000, "note": "Mumbai to Hamburg" },
+    "TW_US": { "seaKm": 10500, "note": "Taiwan to US West Coast" },
+    "TW_EU": { "seaKm": 18000, "note": "Kaohsiung to Rotterdam" },
+    "KR_US": { "seaKm": 9500, "note": "South Korea to US West Coast" },
+    "KR_EU": { "seaKm": 20000, "note": "Busan to Rotterdam (via Suez)" },
+    "JP_US": { "seaKm": 8500, "note": "Japan to US West Coast" },
+    "JP_EU": { "seaKm": 21000, "note": "Yokohama to Rotterdam (via Suez)" },
+    "MX_US": { "seaKm": 3000, "note": "Mexico to US Gulf Coast" },
+    "MX_EU": { "seaKm": 9000, "note": "Veracruz to Rotterdam" },
+    "EU_US": { "seaKm": 6000, "note": "Rotterdam to US East Coast" },
+    "EU_GB": { "seaKm": 400, "note": "Rotterdam to Felixstowe" },
+    "EU_EU": { "seaKm": 0, "truckKm": 800, "note": "Intra-EU road freight" },
+    "AU_US": {
+      "seaKm": 12500,
+      "note": "Sydney to Los Angeles (trans-Pacific)"
+    },
+    "AU_EU": { "seaKm": 20500, "note": "Sydney to Rotterdam (via Suez)" },
+    "BR_US": { "seaKm": 8500, "note": "Santos to New York" },
+    "BR_EU": { "seaKm": 9500, "note": "Santos to Rotterdam" },
+    "ZA_US": { "seaKm": 12500, "note": "Durban to New York" },
+    "ZA_EU": { "seaKm": 11000, "note": "Durban to Rotterdam" },
+    "PH_US": { "seaKm": 11500, "note": "Manila to Los Angeles" },
+    "PH_EU": { "seaKm": 16500, "note": "Manila to Rotterdam (via Suez)" },
+    "MY_US": { "seaKm": 14000, "note": "Port Klang to Los Angeles" },
+    "MY_EU": { "seaKm": 14500, "note": "Port Klang to Rotterdam (via Suez)" },
+    "CA_US": {
+      "seaKm": 0,
+      "truckKm": 600,
+      "note": "Canada to US (land route)"
+    },
+    "CA_EU": { "seaKm": 5500, "note": "Montreal to Rotterdam" },
+    "domestic": {
+      "truckKm": 500,
+      "note": "Default domestic last-mile + distribution"
+    }
+  },
+  "domesticDistances": {
+    "US": { "truckKm": 500, "note": "Average US domestic distribution" },
+    "CN": {
+      "truckKm": 800,
+      "note": "China: large geographic area, longer average distribution"
+    },
+    "IN": {
+      "truckKm": 600,
+      "note": "India: large area, moderate infrastructure"
+    },
+    "DE": {
+      "truckKm": 300,
+      "note": "Germany: compact, excellent road network"
+    },
+    "GB": { "truckKm": 250, "note": "UK: compact island geography" },
+    "FR": {
+      "truckKm": 350,
+      "note": "France: medium-sized, good infrastructure"
+    },
+    "IT": { "truckKm": 400, "note": "Italy: elongated geography" },
+    "ES": { "truckKm": 400, "note": "Spain: large area, lower density" },
+    "JP": { "truckKm": 150, "note": "Japan: compact, dense urban population" },
+    "KR": { "truckKm": 120, "note": "South Korea: very compact, high density" },
+    "TW": { "truckKm": 100, "note": "Taiwan: small island, dense" },
+    "VN": { "truckKm": 500, "note": "Vietnam: long north-south geography" },
+    "BD": { "truckKm": 300, "note": "Bangladesh: compact but congested" },
+    "MX": { "truckKm": 500, "note": "Mexico: large area" },
+    "SE": {
+      "truckKm": 400,
+      "note": "Sweden: elongated geography, sparse north"
+    },
+    "PT": { "truckKm": 250, "note": "Portugal: compact" },
+    "TH": { "truckKm": 350, "note": "Thailand: moderate size" },
+    "ID": { "truckKm": 400, "note": "Indonesia: island-based logistics" },
+    "TR": { "truckKm": 500, "note": "Turkey: large area bridging continents" },
+    "KH": {
+      "truckKm": 250,
+      "note": "Cambodia: small, developing infrastructure"
+    },
+    "AU": {
+      "truckKm": 600,
+      "note": "Australia: large, distant population centers"
+    },
+    "BR": { "truckKm": 500, "note": "Brazil: large country" },
+    "PH": { "truckKm": 150, "note": "Philippines: island distribution" },
+    "MY": { "truckKm": 200, "note": "Malaysia: peninsular + East Malaysia" },
+    "ZA": { "truckKm": 350, "note": "South Africa: moderate logistics" },
+    "CA": { "truckKm": 500, "note": "Canada: large country" },
+    "NL": {
+      "truckKm": 100,
+      "note": "Netherlands: small, dense infrastructure"
+    },
+    "AT": { "truckKm": 150, "note": "Austria: compact" },
+    "PL": { "truckKm": 250, "note": "Poland: medium size" },
+    "NZ": { "truckKm": 200, "note": "New Zealand: two main islands" },
+    "SG": { "truckKm": 30, "note": "Singapore: city-state" }
+  }
+}
